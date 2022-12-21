@@ -1,5 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import {BsSunFill} from 'react-icons/bs';
+import {AiFillCloud} from 'react-icons/ai'
 
 import './Current.css'
 
@@ -28,6 +30,12 @@ export const Current = () => {
                         <h3>H: {`${Math.floor(forecast.forecast.forecastday[0].day.maxtemp_c)}°`} | L: {`${Math.floor(forecast.forecast.forecastday[0].day.mintemp_c)}°`}</h3>
                     </div>
                     <div className="right">
+                        <div className="condition">
+                            <div className="PartlyCloudy">
+                                <BsSunFill className="sun"/>
+                                <AiFillCloud className="cloud"/>
+                            </div>
+                        </div>
                         <h3>{forecast.current.condition.text}</h3>
                     </div>
                 </div>

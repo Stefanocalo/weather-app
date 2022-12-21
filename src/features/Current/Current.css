@@ -14,3 +14,54 @@
     flex-direction: column;
     text-align: center;
 }
+
+/*  Icons  */
+
+
+
+.sun {
+    font-size: 3rem;
+    color: rgb(232, 160, 44);
+    position: absolute;
+}
+
+.cloud {
+    font-size: 4rem;
+    color: rgb(169, 178, 180);
+    animation: cloud infinite 15s;
+    transform: translate(-1rem, 0);
+}
+
+
+/*  Animations  */
+
+@media (prefers-reduced-motion: no-preference) {
+    .sun {
+      animation: rotate infinite 20s linear;
+    }
+    .cloud {
+        animation: moveRignt infinite 10s linear;
+    }
+    
+}
+
+@keyframes moveRignt {
+    0% {
+        transform: translate(0,0)
+    }
+    50% {
+        transform: translate(15px,0)
+    }
+    100% {
+        transform: translate(0,0)
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

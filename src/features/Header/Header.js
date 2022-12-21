@@ -27,7 +27,11 @@ export const Header = () => {
             dispatch(getHints(searchTerm))
         }
        ;
-    }, [searchInput])
+    }, [searchInput]);
+
+    useEffect(() => {
+        dispatch(fetchForecast('Milan'))
+    }, [])
 
     
 

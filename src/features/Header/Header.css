@@ -6,6 +6,8 @@
     align-items: center;
     background-color: rgb(60, 158, 220);
     padding: 0 2rem;
+    position: fixed;
+    top: 0;
 }
 
 .logo {

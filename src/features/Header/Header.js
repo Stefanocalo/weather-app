@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getHints, setSearchTerm } from "../../store/forecastSlice";
+import { fetchForecast, getHints, setSearchTerm, setshowingResults } from "../../store/forecastSlice";
 
 import {AiFillCloud} from 'react-icons/ai';
 import {BiSearch} from 'react-icons/bi';
@@ -12,12 +12,20 @@ export const Header = () => {
     const [searchInput, setSearchInput] = useState('');
 
     const searchTerm = useSelector((state) => state.forecast.searchTerm );
+    const hints = useSelector((state) => state.forecast.searchResults);
+    const showingResults = useSelector((state) => state.forecast.showingResults);
 
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(setSearchTerm(searchInput))
+        dispatch(setSearchTerm(searchInput));
+        if(searchTerm.length > 2) {
+            dispatch(getHints(searchTerm))
+        }
+       ;
     }, [searchInput])
+
+    
 
     const handleInputChange = ({target}) => {
         setSearchInput(target.value);
@@ -25,7 +33,34 @@ export const Header = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(getHints(searchTerm));
+    }
+
+    const handleClick = (city) => {
+        dispatch(fetchForecast(city));
+        setSearchInput('');
+    }
+
+    const renderHints = () => {
+        if(showingResults) {
+            if(hints.length > 1) {
+                return(
+                    <div>
+                        <ul className="HintsList">
+                            {hints.map((city, index) => index < 5 && (
+                                <li 
+                                className="list"
+                                key={city.id}
+                                onClick={() => handleClick(city.name)} >{city.name}</li>
+                            ))}
+    
+                        </ul>
+                        
+                    </div>
+                )
+
+            }
+            
+        }
     }
 
     return(
@@ -50,6 +85,9 @@ export const Header = () => {
                         <BiSearch className="searchBtn"/>
                     </button>
                 </form>
+                {showingResults && <div className="searchHints">
+                    {renderHints()}
+                </div>}
             </div>
         </div>
     )

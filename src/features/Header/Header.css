@@ -33,6 +33,11 @@
     left: 0.7rem;
 }
 
+.search form {
+    display: flex;
+    align-items: center;
+}
+
 .search input {
     border-radius: 15px;
     padding: 0.2rem 1rem;
@@ -45,5 +50,49 @@ button {
 
 .searchBtn {
     color: rgb(240, 240, 240);
-    font-size: 1.1rem;
+    font-size: 1.3rem;
+    padding: 0.1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.searchBtn:hover {
+    color: rgb(240, 240, 240);
+    background-color: rgb(109, 145, 168);
+}
+
+.searchHints {
+    background-color: rgb(240, 240, 240);
+    border: 1px solid black;
+    border-radius: 15px;
+    height: auto;
+    width: 12rem;
+    position: absolute;
+    top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0.2rem;
+}
+
+.HintsList {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+}
+
+.list {
+    padding: 0.4rem 0;
+    width: 80%;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+.list:hover {
+    background-color: rgb(109, 145, 168);
 }

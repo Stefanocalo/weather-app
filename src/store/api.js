@@ -8,7 +8,7 @@ export const getForecast = async(query) => {
 };
 
 export const getSearch = async(query) => {
-    const response = await fetch(`${baseUrl}search.json?key=${process.env.REACT_APP_API_KEY}&q=${query}&aqi=no`);
+    const response = await fetch(`${baseUrl}search.json?key=${process.env.REACT_APP_API_KEY}&q=${query}`);
     const json = response.json();
     return json;
 }

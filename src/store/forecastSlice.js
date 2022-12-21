@@ -9,6 +9,7 @@ const initialState = {
     searchTerm: '',
     searchLoading: false,
     searchError: false,
+    showingResults: false,
     searchResults: []
 }
 
@@ -19,6 +20,7 @@ const forecastSlice = createSlice({
         startGetForecast: (state) => {
             state.isLoading = true;
             state.error = false;
+            state.showingResults = false;
         },
         getForecastSuccess: (state, action) => {
             state.isLoading = false;
@@ -36,11 +38,15 @@ const forecastSlice = createSlice({
         },
         searchSuccess: (state, action) => {
             state.searchLoading = false;
+            state.showingResults = true;
             state.searchResults = action.payload;
         },
         searchError: (state) => {
             state.searchError = true;
             state.searchLoading = false;
+        },
+        setshowingResults: (state) => {
+            state.showingResults = false;
         }
     }
 });
@@ -53,7 +59,8 @@ export const {
     startGetResults,
     searchSuccess,
     searchLoading,
-    searchError
+    searchError,
+    setshowingResults
 } = forecastSlice.actions;
 
 export default forecastSlice.reducer;
@@ -65,6 +72,7 @@ export const fetchForecast = (query) => async (dispatch) => {
         dispatch(startGetForecast());
         const forecast = await getForecast(query);
         dispatch(getForecastSuccess(forecast));
+        dispatch(setshowingResults())
     } catch(error) {
         console.log(error);
         dispatch(getForecastFail);
@@ -76,9 +84,7 @@ export const fetchForecast = (query) => async (dispatch) => {
 export const getHints = (input) => async (dispatch) => {
     try{
         dispatch(startGetResults());
-        console.log(input);
         const searchResult = await getSearch(input);
-        console.log(searchResult);
         dispatch(searchSuccess(searchResult));
     } catch(error) {
         console.log(error)

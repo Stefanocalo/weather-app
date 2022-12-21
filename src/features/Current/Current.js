@@ -26,17 +26,17 @@ export const Current = () => {
                 <div className="CurrentContainer">
                     <div className="right">
                         <h1>{forecast.location.name}</h1>
-                        <h3>{`${Math.floor(forecast.current.temp_c)}°`}</h3>
-                        <h3>H: {`${Math.floor(forecast.forecast.forecastday[0].day.maxtemp_c)}°`} | L: {`${Math.floor(forecast.forecast.forecastday[0].day.mintemp_c)}°`}</h3>
-                    </div>
-                    <div className="right">
                         <div className="condition">
-                            <div className="PartlyCloudy">
+                            <div className="partlyCloudy">
                                 <BsSunFill className="sun"/>
                                 <AiFillCloud className="cloud"/>
                             </div>
+                            <h3>{forecast.current.condition.text}</h3>
                         </div>
-                        <h3>{forecast.current.condition.text}</h3>
+                    </div>
+                    <div className="right">
+                        <h1>{`${Math.floor(forecast.current.temp_c)}°`}</h1>
+                        <h3>H: {`${Math.floor(forecast.forecast.forecastday[0].day.maxtemp_c)}°`} | L: {`${Math.floor(forecast.forecast.forecastday[0].day.mintemp_c)}°`}</h3>
                     </div>
                 </div>
             )

@@ -23,27 +23,20 @@
     font-size: 3rem;
     color: rgb(232, 160, 44);
     position: absolute;
+    animation: rotate infinite 20s linear;
 }
 
 .cloud {
     font-size: 4rem;
     color: rgb(169, 178, 180);
-    animation: cloud infinite 15s;
     transform: translate(-1rem, 0);
+    animation: moveRignt infinite 10s linear;
 }
 
 
 /*  Animations  */
 
-@media (prefers-reduced-motion: no-preference) {
-    .sun {
-      animation: rotate infinite 20s linear;
-    }
-    .cloud {
-        animation: moveRignt infinite 10s linear;
-    }
-    
-}
+
 
 @keyframes moveRignt {
     0% {

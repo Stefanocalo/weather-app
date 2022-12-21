@@ -27,11 +27,15 @@
 }
 
 .hour {
-    padding: 1rem 0;
+    padding: 0 1rem;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    margin: 1rem 1rem;
+}
+
+.icon {
+    font-size: 2rem;
+    color: rgb(232, 160, 44);
 }

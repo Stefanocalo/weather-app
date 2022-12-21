@@ -1,12 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getForecast } from "./api";
+import { getForecast, getSearch } from "./api";
 
 
 const initialState = {
     forecast: [],
     isLoading: false,
     error: false,
-    searchTerm: ''
+    searchTerm: '',
+    searchLoading: false,
+    searchError: false,
+    searchResults: []
 }
 
 const forecastSlice = createSlice({
@@ -27,6 +30,17 @@ const forecastSlice = createSlice({
         },
         setSearchTerm: (state, action) => {
             state.searchTerm = action.payload;
+        },
+        startGetResults: (state) => {
+            state.searchLoading = true;
+        },
+        searchSuccess: (state, action) => {
+            state.searchLoading = false;
+            state.searchResults = action.payload;
+        },
+        searchError: (state) => {
+            state.searchError = true;
+            state.searchLoading = false;
         }
     }
 });
@@ -35,7 +49,11 @@ export const {
     startGetForecast,
     getForecastSuccess,
     getForecastFail,
-    setSearchTerm
+    setSearchTerm,
+    startGetResults,
+    searchSuccess,
+    searchLoading,
+    searchError
 } = forecastSlice.actions;
 
 export default forecastSlice.reducer;
@@ -50,6 +68,21 @@ export const fetchForecast = (query) => async (dispatch) => {
     } catch(error) {
         console.log(error);
         dispatch(getForecastFail);
+    }
+};
+
+// Thunk to get autocomplete
+
+export const getHints = (input) => async (dispatch) => {
+    try{
+        dispatch(startGetResults());
+        console.log(input);
+        const searchResult = await getSearch(input);
+        console.log(searchResult);
+        dispatch(searchSuccess(searchResult));
+    } catch(error) {
+        console.log(error)
+        dispatch(searchError());
     }
 }
 

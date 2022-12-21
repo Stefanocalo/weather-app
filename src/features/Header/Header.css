@@ -1,0 +1,49 @@
+.header {
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(60, 158, 220);
+    padding: 0 2rem;
+}
+
+.logo {
+    display: flex;
+}
+
+.logo p {
+    color: rgb(181, 220, 84);
+    z-index: 1;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.logo span {
+    color: rgb(244, 231, 231);
+    z-index: 1;
+    font-weight: 600;
+}
+
+.logoIcon {
+    color: rgb(104, 103, 103);
+    font-size: 3rem;
+    position: absolute;
+    top: 0;
+    left: 0.7rem;
+}
+
+.search input {
+    border-radius: 15px;
+    padding: 0.2rem 1rem;
+    margin: 0 0.5rem;
+}
+
+button {
+    background: none;
+}
+
+.searchBtn {
+    color: rgb(240, 240, 240);
+    font-size: 1.1rem;
+}

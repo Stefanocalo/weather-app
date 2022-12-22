@@ -4,7 +4,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(60, 158, 220);
+    background-color: rgba(136, 157, 173, 0.8);
+    backdrop-filter: blur(1rem);
     padding: 0 2rem;
     position: fixed;
     top: 0;

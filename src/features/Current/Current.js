@@ -13,6 +13,9 @@ export const Current = () => {
     const forecast = useSelector((state) => state.forecast.forecast);
     const isLoading = useSelector((state) => state.forecast.isLoading);
 
+    let today = new Date();
+    let now = today.getHours();
+
 
     const renderCurrent = () => {
 
@@ -25,18 +28,22 @@ export const Current = () => {
         }
 
         if(forecast.location) {
+            let sunsetF = Math.floor(forecast.forecast.forecastday[0].astro.sunset[0] + forecast.forecast.forecastday[0].astro.sunset[1]);
+            let dawn = (Math.floor(forecast.forecast.forecastday[0].astro.sunrise[0] + forecast.forecast.forecastday[0].astro.sunrise[1]));
+            let sunsetHF = sunsetF + 12;
+
             return(
                 <div className="CurrentContainer">
                     <div className="right">
-                        <h1>{forecast.location.name}</h1>
+                        <h1 className="city">{forecast.location.name}</h1>
                         <div className="condition">
-                            <p>{forecast.current.condition.code}</p>
-                            <h3>{forecast.current.condition.text}</h3>
+                            {renderAnim(forecast.current.condition.code, now, sunsetHF, dawn)}
+                            <h3 className="cond">{forecast.current.condition.text}</h3>
                         </div>
                     </div>
                     <div className="right">
-                        <h1>{`${Math.floor(forecast.current.temp_c)}°`}</h1>
-                        <h3>H: {`${Math.floor(forecast.forecast.forecastday[0].day.maxtemp_c)}°`} | L: {`${Math.floor(forecast.forecast.forecastday[0].day.mintemp_c)}°`}</h3>
+                        <h1 className="deg">{`${Math.floor(forecast.current.temp_c)}°`}</h1>
+                        <h3 className="cond">H: {`${Math.floor(forecast.forecast.forecastday[0].day.maxtemp_c)}°`} | L: {`${Math.floor(forecast.forecast.forecastday[0].day.mintemp_c)}°`}</h3>
                     </div>
                 </div>
             )

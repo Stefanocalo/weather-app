@@ -1,0 +1,258 @@
+.animSun {
+    font-size: 4.5rem;
+    color: rgb(232, 160, 44);
+    animation: rotate infinite 20s;
+}
+
+.animMoon {
+    font-size: 4.5rem;
+    color: rgb(239, 191, 112);
+    animation: bounce infinite 3s;
+}
+
+.animSun1 {
+    font-size: 4.5rem;
+    color: rgb(232, 160, 44);
+    animation: bounce1 infinite 3s;
+    transform: translate(2rem, 0);
+}
+
+.animMoon1 {
+    font-size: 4.5rem;
+    color: rgb(239, 191, 112);
+    animation: bounce1 infinite 3s;
+    transform: translate(2rem, 0);
+}
+
+.animCloud {
+    font-size: 5rem;
+    color: rgb(207, 213, 214);
+    transform: translate(-2rem, 1rem);
+    animation: moveRight infinite 3s;
+}
+
+.animCloud1 {
+    font-size: 4rem;
+    color: rgb(207, 213, 214);
+
+}
+
+.animCloud2 {
+    font-size: 3rem;
+    color: rgb(123, 147, 151);
+    transform: translate(2rem,0);
+    animation: moveRight infinite 3s;
+}
+
+.animCloud3 {
+    font-size: 4rem;
+    color: rgb(123, 147, 151);
+    transform: translate(2rem,0);
+}
+
+.animline,
+.animline1 {
+    padding: 0.1rem 2rem;
+    margin: 0.3rem 0;
+    background-color: rgb(123, 147, 151);
+    border-radius: 15px;
+}
+
+.animline {
+    animation: shrink infinite 3s 1.5s;
+}
+
+.animline1 {
+    animation: shrink infinite 3s;
+}
+
+.animFogCloud {
+    font-size: 5rem;
+    color: rgb(207, 213, 214);
+}
+
+.animDrop {
+    font-size: 1rem;
+    color: rgb(15, 96, 110);
+    transform: translate(-5rem, 4.5rem) rotate(10deg);
+    animation: dropBounce infinite 3s;
+}
+
+.animDrop1 {
+    font-size: 1rem;
+    color: rgb(15, 96, 110);
+    transform: translate(-1.5rem, 3.2rem) rotate(20deg);
+    animation: drop1 infinite 3s;
+}
+
+.animDrop2 {
+    font-size: 1rem;
+    color: rgb(15, 96, 110);
+    transform: translate(-0.4rem, 3.1rem) rotate(20deg);
+    animation: drop2 infinite 3s 0.3s;
+}
+
+.animthunderLight {
+    font-size: 1.5rem;
+    color: rgb(232, 160, 44);
+    transform: translate(-2.8rem, 2.8rem);
+}
+
+.animIce1 {
+    font-size: 3rem;
+    transform: translate(-2rem, 2rem);
+    color: rgb(101, 201, 218);
+    animation: ice1 infinite 3s;
+}
+
+.animIce2 {
+    font-size: 2rem;
+    transform: translate(-0.4rem, 3.1rem);
+    transform: translate(-3rem, 2.2rem);
+    color: rgb(101, 201, 218);
+    animation: ice2 infinite 3s 1s;
+}
+
+.clear,
+.cloudy,
+.overCast,
+.fog,
+.patchy,
+.thunder {
+    padding: 1rem;
+}
+
+
+
+
+
+
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translate(0,0);
+    }
+    50%{
+        transform: translate(0, 0.3rem);
+    }
+    100% {
+        transform: translate(0,0);
+    }
+}
+
+@keyframes bounce1 {
+    0% {
+        transform: translate(2rem,0);
+    }
+    50%{
+        transform: translate(2rem, 0.3rem);
+    }
+    100% {
+        transform: translate(2rem,0);
+    }
+}
+
+@keyframes moveRight {
+    0%{
+        transform: translate(-2rem, 1rem);
+    }
+    50%{
+        transform: translate(-1rem, 1rem);
+    }
+    100%{
+        transform: translate(-2rem, 1rem);
+    }
+}
+
+@keyframes moveLeft {
+    0%{
+        transform: translate(-2rem, 1rem);
+    }
+    50%{
+        transform: translate(-1rem, 1rem);
+    }
+    100%{
+        transform: translate(-2rem, 1rem);
+    }
+}
+
+@keyframes shrink {
+    0%{
+        padding: 0.1rem 2rem;
+    }
+    50%{
+        padding: 0.1rem 1rem;
+    }
+    100%{
+        padding: 0.1rem 2rem;
+    }
+}
+
+@keyframes dropBounce {
+    0%{
+        transform: translate(-5rem, 4.5rem) rotate(10deg);
+    }
+    50%{
+        transform: translate(-5.3rem, 5rem) rotate(10deg);
+    }
+    100%{
+        transform: translate(-5rem, 4.5rem) rotate(10deg);
+    }
+}
+
+@keyframes drop1 {
+    0%{
+        transform: translate(-1.5rem, 3.2rem) rotate(20deg);
+    }
+    50%{
+        transform: translate(-1.3rem, 3rem) rotate(20deg);
+    }
+    100%{
+        transform: translate(-1.5rem, 3.2rem) rotate(20deg);
+    }
+}
+
+@keyframes drop2 {
+    0%{
+        transform: translate(-0.4rem, 3.1rem) rotate(20deg);
+    }
+    50%{
+        transform: translate(-0.3rem, 2.8rem) rotate(20deg);
+    }
+    100%{
+        transform: translate(-0.4rem, 3.1rem) rotate(20deg);
+    }
+}
+
+@keyframes ice1 {
+    0%{
+        transform: translate(-2rem, 2rem);
+    }
+    50%{
+        transform: translate(-2.5rem, 2.4rem);
+    }
+    100%{
+        transform: translate(-2rem, 2rem);
+    }
+}
+
+@keyframes ice2 {
+    0%{
+        transform: translate(-3rem, 2.2rem);
+    }
+    50%{
+        transform: translate(-3.5rem, 2.6rem);
+    }
+    100%{
+        transform: translate(-3rem, 2.2rem);
+    }
+}

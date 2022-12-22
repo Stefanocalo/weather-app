@@ -10,51 +10,21 @@
 .left {
     display: flex;
     align-content: center;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
     text-align: center;
 }
 
-/*  Icons  */
-
-
-
-.sun {
+.city {
     font-size: 3rem;
-    color: rgb(232, 160, 44);
-    position: absolute;
-    animation: rotate infinite 20s linear;
 }
 
-.cloud {
+.deg {
+    margin-top: 3.5rem;
     font-size: 4rem;
-    color: rgb(169, 178, 180);
-    transform: translate(-1rem, 0);
-    animation: moveRignt infinite 10s linear;
 }
 
-
-/*  Animations  */
-
-
-
-@keyframes moveRignt {
-    0% {
-        transform: translate(0,0)
-    }
-    50% {
-        transform: translate(15px,0)
-    }
-    100% {
-        transform: translate(0,0)
-    }
+.cond {
+    font-size: 1.5rem;
 }
 
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}

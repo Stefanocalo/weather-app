@@ -28,7 +28,7 @@ export const Hourly = () => {
                 if(now + index <= 23) {
                     return(
                         <div className="hour" key={index}>
-                            <p>{`${(now + index)}:00`}</p>
+                            <p>{now + index === now ? 'now' : `${(now + index)}:00`}</p>
                             <BsSunFill className="icon"/>
                             <p>{`${Math.floor(forecast.forecast.forecastday[0].hour[(now + index)].temp_c)}°`}</p>
                         </div>
@@ -36,7 +36,7 @@ export const Hourly = () => {
                 } else if(now + index > 23) {
                     return(
                         <div className="hour" key={index}>
-                            <p>{`${(now + index) - 24}:00`}</p>
+                            <p>{(now + index )- 24 === now ? 'now' : `${(now + index) - 24}:00`}</p>
                             <BsSunFill className="icon"/>
                             <p>{`${Math.floor(forecast.forecast.forecastday[1].hour[(now + index) - 23].temp_c)}°`}</p>
                         </div>

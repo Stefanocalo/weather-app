@@ -10,7 +10,7 @@
     display: flex;
     justify-content: start;
     align-items: center;
-    background-color: rgb(207, 230, 255);
+    background-color: rgb(174, 212, 255);
     width:90%;
     height: 10rem;
     border-radius: 15px;
@@ -29,7 +29,6 @@
 .hour {
     padding: 0 1rem;
     height: 100%;
-    width: 5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,8 +41,19 @@
 }
 
 .cloudy,
-.overCast {
+.overCast,
+.patch,
+.thunder,
+.snow,
+.rain,
+.sleet,
+.ice {
     display: flex;
+}
+.fog {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 /*  Static icons  */
@@ -58,11 +68,58 @@
     color: rgb(239, 191, 112);
 }
 
+.staticSun1{
+    font-size: 2rem;
+    color: rgb(232, 160, 44);
+    transform: translate(1rem, 0);
+}
+
+.staticMoon1 {
+    font-size: 2rem;
+    color: rgb(239, 191, 112);
+    transform: translate(1rem, 0);
+}
+
 .staticCloud {
     font-size: 2.5rem;
     color: rgb(207, 213, 214);
-    position: relative;
-    transform: translate(-1.5rem, 0.4rem);
+    transform: translate(-0.8rem, 0.4rem);
+}
+
+.staticDrop {
+    font-size: 0.5rem;
+    color: rgb(15, 96, 110);
+    transform: translate(-2.5rem, 2.5rem) rotate(10deg);
+}
+
+.staticDrop1 {
+    font-size: 0.5rem;
+    color: rgb(15, 96, 110);
+    transform: translate(0rem, 2.1rem) rotate(30deg);
+}
+
+.staticDrop2 {
+    font-size: 0.5rem;
+    color: rgb(15, 96, 110);
+    transform: translate(-1.7rem, 2.3rem) rotate(30deg);
+}
+
+.staticIce1 {
+    font-size: 1.5rem;
+    color: rgb(223, 223, 223);
+    transform: translate(-0.4rem, 2.1rem) rotate(30deg);
+}
+
+.staticIce2 {
+    font-size: 1.5rem;
+    color: rgb(233, 233, 233);
+    transform: translate(-3rem, 2.3rem) rotate(30deg);
+}
+
+.thunderLight {
+    font-size: 1.2rem;
+    color: rgb(232, 160, 44);
+    transform: translate(-2rem, 2rem) rotate(10deg);    
 }
 
 .staticCloud1 {
@@ -76,5 +133,25 @@
     font-size: 2.5rem;
     color: rgb(152, 161, 162);
     transform: translate(-0.8rem, 0.2rem);
+}
+
+.staticCloud3 {
+    font-size: 2.5rem;
+    color: rgb(152, 161, 162);
+    transform: translate(1rem, 0.2rem);
+}
+
+.fogCloud {
+    font-size: 2.5rem;
+    color: rgb(207, 213, 214);
+}
+
+.line,
+.line1 {
+    padding: 0.05rem 0.1rem;
+    margin: 0.1rem 0;
+    width: 2rem;
+    background-color: rgb(231, 241, 255);
+    border-radius: 5px;
 }
 

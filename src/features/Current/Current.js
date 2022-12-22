@@ -3,6 +3,9 @@ import { useSelector } from "react-redux";
 import {BsSunFill} from 'react-icons/bs';
 import {AiFillCloud} from 'react-icons/ai'
 
+import { renderAnim } from "../Hourly/renderAnim";
+import '../Hourly/renderAnim.css';
+
 import './Current.css'
 
 export const Current = () => {
@@ -27,10 +30,7 @@ export const Current = () => {
                     <div className="right">
                         <h1>{forecast.location.name}</h1>
                         <div className="condition">
-                            <div className="partlyCloudy">
-                                <BsSunFill className="sun"/>
-                                <AiFillCloud className="cloud"/>
-                            </div>
+                            <p>{forecast.current.condition.code}</p>
                             <h3>{forecast.current.condition.text}</h3>
                         </div>
                     </div>

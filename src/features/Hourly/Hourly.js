@@ -1,7 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import {BsSunFill, BsFillMoonStarsFill} from 'react-icons/bs';
-import {AiFillCloud} from 'react-icons/ai';
+
+import { renderStatic } from "./renderStatic";
+
 
 import './Hourly.css'
 
@@ -53,51 +54,6 @@ export const Hourly = () => {
         }
     }
 
-
-    const renderStatic = (code, actual, sunsetH, dawn) => {
-        switch(code) {
-            case 1000: 
-                if(actual < sunsetH && actual > dawn) {
-                    return(
-                        <div className="clear">
-                            <BsSunFill className="staticSun"/>
-                        </div>
-                    )
-                } else if(actual >= sunsetH || actual >= 0 && actual < dawn) {
-                    return(
-                        <div className="clear">
-                            <BsFillMoonStarsFill className="staticMoon" />
-                        </div>
-                    )
-                }
-            break;
-            case 1003:
-                if(actual < sunsetH && actual > dawn) {
-                    return(
-                        <div className="cloudy">
-                            <BsSunFill className="staticSun"/>
-                            <AiFillCloud className="staticCloud" />
-                        </div>
-                    )
-                } else if(actual >= sunsetH || actual >= 0 && actual < dawn) {
-                    return(
-                        <div className="cloudy">
-                            <BsFillMoonStarsFill className="staticMoon" />
-                            <AiFillCloud className="staticCloud" />
-                        </div>
-                    )
-                }
-            break;
-            case 1006 || 1009:
-                return(
-                    <div className="overCast">
-                        <AiFillCloud className="staticCloud1" />
-                        <AiFillCloud className="staticCloud2" />
-                    </div>
-                );
-            break;
-        }
-    }
 
 
     return(

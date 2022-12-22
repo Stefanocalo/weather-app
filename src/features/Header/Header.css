@@ -53,6 +53,7 @@ button {
 
 .searchHints {
     background-color: rgb(240, 240, 240);
+    color: rgb(0, 0, 0);
     border-radius: 15px;
     height: auto;
     width: 12rem;

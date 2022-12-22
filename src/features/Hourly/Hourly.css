@@ -10,7 +10,7 @@
     display: flex;
     justify-content: start;
     align-items: center;
-    background-color: rgb(189, 189, 189);
+    background-color: rgb(207, 230, 255);
     width:90%;
     height: 10rem;
     border-radius: 15px;
@@ -29,6 +29,7 @@
 .hour {
     padding: 0 1rem;
     height: 100%;
+    width: 5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,3 +40,41 @@
     font-size: 2rem;
     color: rgb(232, 160, 44);
 }
+
+.cloudy,
+.overCast {
+    display: flex;
+}
+
+/*  Static icons  */
+
+.staticSun {
+    font-size: 2rem;
+    color: rgb(232, 160, 44);
+}
+
+.staticMoon {
+    font-size: 2rem;
+    color: rgb(239, 191, 112);
+}
+
+.staticCloud {
+    font-size: 2.5rem;
+    color: rgb(207, 213, 214);
+    position: relative;
+    transform: translate(-1.5rem, 0.4rem);
+}
+
+.staticCloud1 {
+    font-size: 3rem;
+    color: rgb(204, 204, 204);
+    position: relative;
+    transform: translate(0.7rem, 0);
+}
+
+.staticCloud2 {
+    font-size: 2.5rem;
+    color: rgb(152, 161, 162);
+    transform: translate(-0.8rem, 0.2rem);
+}
+

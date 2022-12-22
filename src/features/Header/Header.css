@@ -87,3 +87,18 @@ button {
 .list:hover {
     background-color: rgb(184, 197, 205);
 }
+
+@media only screen and (max-width: 600px) {
+   .header {
+        flex-direction: column; 
+        justify-content: flex-start;   
+        height: 4rem;
+        padding: 1rem 0;
+   }
+
+   .logo {
+    display: none;
+    }   
+
+
+}

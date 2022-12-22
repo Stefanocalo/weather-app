@@ -30,7 +30,7 @@ export const Hourly = () => {
                         <div className="hour" key={index}>
                             <p>{`${(now + index)}:00`}</p>
                             <BsSunFill className="icon"/>
-                            <p>{forecast.forecast.forecastday[0].hour[(now + index)].temp_c}</p>;
+                            <p>{`${Math.floor(forecast.forecast.forecastday[0].hour[(now + index)].temp_c)}°`}</p>
                         </div>
                     )
                 } else if(now > 22) {

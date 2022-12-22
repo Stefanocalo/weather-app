@@ -62,7 +62,7 @@ export const Header = () => {
                 return(
                     <div>
                         <ul className="HintsList">
-                            {hints.map((city, index) => index < 5 && (
+                            {hints.map((city, index) => index < 3 && (
                                 <li 
                                 className="list"
                                 key={city.id}

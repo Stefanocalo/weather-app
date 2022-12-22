@@ -1,8 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-
-import { renderStatic } from "./renderStatic";
-
+import {renderStatic} from './renderStatic.js'
 
 import './Hourly.css'
 
@@ -54,6 +52,8 @@ export const Hourly = () => {
         }
     }
 
+
+    
 
 
     return(

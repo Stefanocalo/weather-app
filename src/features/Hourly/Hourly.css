@@ -42,7 +42,7 @@
 
 .cloudy,
 .overCast,
-.patch,
+.patchy,
 .thunder,
 .snow,
 .rain,
@@ -107,13 +107,13 @@
 .staticIce1 {
     font-size: 1.5rem;
     color: rgb(223, 223, 223);
-    transform: translate(-0.4rem, 2.1rem) rotate(30deg);
+    transform: translate(0rem, 2.1rem) rotate(30deg);
 }
 
 .staticIce2 {
     font-size: 1.5rem;
     color: rgb(233, 233, 233);
-    transform: translate(-3rem, 2.3rem) rotate(30deg);
+    transform: translate(-1.7rem, 2.3rem) rotate(30deg);
 }
 
 .thunderLight {

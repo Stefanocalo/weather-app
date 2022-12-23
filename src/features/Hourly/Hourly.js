@@ -10,7 +10,7 @@ export const Hourly = () => {
     const isLoading = useSelector((state) => state.forecast.isLoading);
 
     let today = new Date();
-    let now = today.getHours();
+    let now = today.getHours() + 1;
 
 
     const renderHourly = () => {
@@ -28,11 +28,16 @@ export const Hourly = () => {
 
             return(
                 <>
+                <div className="hour">
+                    <p>now</p>
+                    {renderStatic(forecast.current.condition.code, now, sunsetHF, dawn)}
+                    <p>{`${Math.floor(forecast.current.temp_c)}°`}</p>
+                </div>
                 { Array(15).fill(0).map((n, index) => {
                 if(now + index <= 23) {
                     return(
                         <div className="hour" key={index}>
-                            <p>{now + index === now ? 'now' : `${(now + index)}:00`}</p>
+                            <p>{`${(now + index)}:00`}</p>
                             {renderStatic(forecast.forecast.forecastday[0].hour[(now + index)].condition.code, (now + index), sunsetHF, dawn)}
                             <p>{`${Math.floor(forecast.forecast.forecastday[0].hour[(now + index)].temp_c)}°`}</p>
                         </div>
@@ -40,7 +45,7 @@ export const Hourly = () => {
                 } else if(now + index > 23) {
                     return(
                         <div className="hour" key={index}>
-                            <p>{(now + index )- 24 === now ? 'now' : `${(now + index) - 24}:00`}</p>
+                            <p>{`${(now + index) - 24}:00`}</p>
                             {renderStatic(forecast.forecast.forecastday[1].hour[(now + index) -24].condition.code, ((now + index) -24), sunsetHF, dawn)}
                             <p>{`${Math.floor(forecast.forecast.forecastday[1].hour[(now + index) - 23].temp_c)}°`}</p>
                         </div>

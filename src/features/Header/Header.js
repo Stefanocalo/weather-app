@@ -4,7 +4,6 @@ import { fetchForecast, getHints, setSearchTerm, setshowingResults } from "../..
 import { HintSkeleton } from "./HintSkeleton";
 
 import {AiFillCloud} from 'react-icons/ai';
-import {BiSearch} from 'react-icons/bi';
 
 import './Header.css';
 import Skeleton from "react-loading-skeleton";
@@ -23,8 +22,10 @@ export const Header = () => {
 
     useEffect(() => {
         dispatch(setSearchTerm(searchInput));
-        if(searchTerm.length > 2) {
+        if(searchInput.length >= 3) {
             dispatch(getHints(searchTerm))
+        } else if(searchInput.length < 3) {
+            dispatch(setshowingResults());
         }
        ;
     }, [searchInput]);
@@ -48,6 +49,11 @@ export const Header = () => {
         setSearchInput('');
     }
 
+    const handleClearClick = () => {
+        dispatch(setshowingResults());
+        setSearchInput('');
+    }
+
     const renderHints = () => {
 
         if(showingResults) {
@@ -58,7 +64,7 @@ export const Header = () => {
                     </div>
                 )
             }
-            if(hints.length > 1) {
+            if(hints.length > 0) {
                 return(
                     <div>
                         <ul className="HintsList">
@@ -68,12 +74,23 @@ export const Header = () => {
                                 key={city.id}
                                 onClick={() => handleClick(city.name)} >{city.name}</li>
                             ))}
-    
                         </ul>
                         
                     </div>
                 )
 
+            }
+            if(hints.length === 0) {
+                return(
+                    <div>
+                        <ul className="HintsList">
+                                <li 
+                                className="list"
+                                >No results</li>
+
+                        </ul>
+                    </div>
+                )
             }
             
         }
@@ -91,11 +108,15 @@ export const Header = () => {
                 onSubmit={handleSubmit}
                 >
                     <input
+                    className="searchInput"
                     type='text'
                     placeholder="search"
                     value={searchInput}
-                    onChange={handleInputChange} >
+                    onChange={handleInputChange}>
                     </input>
+                    <button 
+                    onClick={() => handleClearClick()}
+                    >clear</button>
                 </form>
                 {showingResults && <div className="searchHints">
                     {renderHints()}

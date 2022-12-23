@@ -7,8 +7,6 @@
     background-color: rgba(136, 157, 173, 0.8);
     backdrop-filter: blur(1rem);
     padding: 0 2rem;
-    position: fixed;
-    top: 0;
 }
 
 .logo {
@@ -41,14 +39,22 @@
     align-items: center;
 }
 
-.search input {
+input {
     border-radius: 15px;
     padding: 0.4rem 1rem;
     margin: 0 0.5rem;
+    transition: 0.3s;
 }
 
+input[type=text]:focus{
+    padding: 0.5rem 3rem;
+  }
+
+
 button {
-    background: none;
+    border-radius: 15px;
+    padding: 0.4rem 1rem ; 
+    cursor: pointer;
 }
 
 .searchHints {

@@ -256,3 +256,13 @@
         transform: translate(-3rem, 2.2rem);
     }
 }
+
+@media only screen and (max-width: 600px) {
+    .rain {
+        padding-left: 1rem;
+    }
+ 
+    .patchy {
+    padding: 1rem 1rem 1rem 2rem;
+    }
+ }

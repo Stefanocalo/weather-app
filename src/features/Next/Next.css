@@ -1,0 +1,36 @@
+.nextContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+.day {
+    width: 90%;
+    border: 1px solid white;
+    height: 2rem;
+    overflow: hidden;
+}
+
+.day:nth-child(1) {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.day:nth-child(3) {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.top {
+    background-color: rgba(240, 240, 240, 0.3);
+    height: 2rem;
+}
+
+.bottom {
+    background-color: rgba(75, 51, 51, 0.3);
+    height: 2rem;
+}
+
+

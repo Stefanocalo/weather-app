@@ -1,7 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import {BsSunFill} from 'react-icons/bs';
-import {AiFillCloud} from 'react-icons/ai'
+
 
 import { renderAnim } from "../Hourly/renderAnim";
 import '../Hourly/renderAnim.css';
@@ -57,3 +56,4 @@ export const Current = () => {
         </div>
     )
 }
+

@@ -123,6 +123,7 @@ export const renderStatic = (code, actual, sunsetH, dawn) => {
         case 1243:
         case 1246:
         case 1249:
+        case 1189:
             return(
                 <div className="rain">
                     <AiFillCloud className="staticCloud3" />

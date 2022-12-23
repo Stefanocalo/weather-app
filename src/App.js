@@ -3,6 +3,7 @@ import { Header } from "./features/Header/Header";
 import { SkeletonTheme } from "react-loading-skeleton";
 import { Current } from "./features/Current/Current";
 import { Hourly } from "./features/Hourly/Hourly";
+import { Next } from "./features/Next/Next";
 
 export const App = () => {
     return(
@@ -11,6 +12,7 @@ export const App = () => {
             <Header />
             <Current />
             <Hourly />
+            <Next />
         </SkeletonTheme>
         </>
     )

@@ -33,7 +33,7 @@ export const Hourly = () => {
                     {renderStatic(forecast.current.condition.code, now, sunsetHF, dawn)}
                     <p>{`${Math.floor(forecast.current.temp_c)}°`}</p>
                 </div>
-                { Array(15).fill(0).map((n, index) => {
+                { Array(23).fill(0).map((n, index) => {
                 if(now + index <= 23) {
                     return(
                         <div className="hour" key={index}>

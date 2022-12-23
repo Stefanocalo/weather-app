@@ -28,3 +28,16 @@
     font-size: 1.5rem;
 }
 
+@media only screen and (max-width: 600px) {
+    .CurrentContainer {
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+
+    .deg {
+        margin-top: 1rem;
+    }
+ 
+ 
+ }
+

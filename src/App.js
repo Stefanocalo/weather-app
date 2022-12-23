@@ -4,6 +4,7 @@ import { SkeletonTheme } from "react-loading-skeleton";
 import { Current } from "./features/Current/Current";
 import { Hourly } from "./features/Hourly/Hourly";
 import { Next } from "./features/Next/Next";
+import { General } from "./features/General/General";
 
 export const App = () => {
     return(
@@ -13,6 +14,7 @@ export const App = () => {
             <Current />
             <Hourly />
             <Next />
+            <General />
         </SkeletonTheme>
         </>
     )

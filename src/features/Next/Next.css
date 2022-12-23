@@ -16,6 +16,16 @@
     animation: close 0.2s;
 }
 
+.dayGeneral {
+    width: 90%;
+    height: 72rem;
+    overflow: hidden;
+    transition: 0.5s linear;
+    animation: close 0.2s;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 15px;
+}
+
 .day.active {
     height: 60rem;
     animation: open 0.2s linear;
@@ -134,7 +144,8 @@
 
 @media only screen and (max-width: 600px) {
     .nextContainer {
-        padding-bottom: 6rem;
+        padding-top: 0rem;
+        padding-bottom: 3rem;
     }
 
     .card {
@@ -165,6 +176,11 @@
 
     .data {
         font-size: 1rem;
+    }
+
+    .dayGeneral {
+        height: 40rem;
+        margin-bottom: 4rem;
     }
     
 }

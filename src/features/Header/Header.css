@@ -121,16 +121,16 @@ button {
     }   
 
     input {
-        padding: 0.6rem 6rem;
+        padding: 0.5rem 5rem;
         font-size: 1rem;
     }
     
     input[type=text]:focus{
-        padding: 0.6rem 4.3rem;
+        padding: 0.5rem 4rem;
     }
 
     button {
-        padding: 0.6rem 1rem;
+        padding: 0.5rem 1rem;
     }
 
     .searchHints {

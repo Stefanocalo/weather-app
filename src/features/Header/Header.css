@@ -59,7 +59,7 @@ input[type=text]:focus + button {
 
 button {
     border-radius: 15px;
-    padding: 0.4rem 1rem ; 
+    padding: 0.5rem 1rem ; 
     cursor: pointer;
     position: fixed;
     right: -100%;
@@ -121,11 +121,16 @@ button {
     }   
 
     input {
-        padding: 0.6rem 7rem;
+        padding: 0.6rem 6rem;
+        font-size: 1rem;
     }
     
     input[type=text]:focus{
-        padding: 0.6rem 5rem;
+        padding: 0.6rem 4.3rem;
+    }
+
+    button {
+        padding: 0.6rem 1rem;
     }
 
     .searchHints {

@@ -7,7 +7,7 @@
     background-color: rgba(181, 223, 255, 0.3);
     backdrop-filter: blur(1rem);
     padding: 0 2rem;
-    z-index: 999
+    z-index: 999;
 }
 
 .logo {
@@ -51,11 +51,20 @@ input[type=text]:focus{
     padding: 0.5rem 3rem;
 }
 
+input[type=text]:focus + button {
+    position: static;
+    right: 0;
+}
+
 
 button {
     border-radius: 15px;
     padding: 0.4rem 1rem ; 
     cursor: pointer;
+    position: fixed;
+    right: -100%;
+    transition: 0.3s;
+    
 }
 
 .searchHints {
@@ -104,8 +113,7 @@ button {
         padding: 1rem 0;
         position: fixed;
         bottom: 0;
-        backdrop-filter: blur(3rem);
-        
+        backdrop-filter: blur(3rem);    
    }
 
    .logo {
@@ -113,17 +121,21 @@ button {
     }   
 
     input {
-        padding: 0.4rem 3rem;
+        padding: 0.6rem 7rem;
     }
     
     input[type=text]:focus{
-        padding: 0.5rem 5rem;
+        padding: 0.6rem 5rem;
     }
 
     .searchHints {
         top: -250%;
         left: 10%;
         width: 80%;
+    }
+
+    .HintsList {
+        flex-direction: column-reverse;
     }
 
 }

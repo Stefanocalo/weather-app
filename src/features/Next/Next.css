@@ -155,11 +155,10 @@
 
     .day {
         animation: closeM 0.2s;
-        height: 4rem;
     }
 
     .day.active {
-        height: 35rem;
+        height: auto;
         animation: openM 0.2s;
     }
 
@@ -181,7 +180,7 @@
 
     .dayGeneral {
         height: 40rem;
-        margin-bottom: 4rem;
+        padding-bottom: 4rem;
     }
     
 }

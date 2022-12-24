@@ -33,8 +33,8 @@ export const Current = () => {
 
             return(
                 <div className="CurrentContainer">
-                    <div className="right">
-                        <h1 className="city">{forecast.location.name}</h1>
+                    <div className="left">
+                        <h1 className='city'>{forecast.location.name}</h1>
                         <div className="condition">
                             {renderAnim(forecast.current.condition.code, now, sunsetHF, dawn)}
                             <h3 className="cond">{forecast.current.condition.text}</h3>

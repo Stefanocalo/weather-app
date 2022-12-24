@@ -1,6 +1,5 @@
 .CurrentContainer {
     margin-top: 4rem;
-    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -17,6 +16,7 @@
 
 .city {
     font-size: 3rem;
+    width: 100%;
 }
 
 .deg {
@@ -26,6 +26,7 @@
 
 .cond {
     font-size: 1.5rem;
+    
 }
 
 @media only screen and (max-width: 600px) {
@@ -36,8 +37,6 @@
 
     .deg {
         margin-top: 1rem;
-    }
- 
- 
+    } 
  }
 

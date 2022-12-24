@@ -122,12 +122,6 @@
     padding: 1rem;
 }
 
-
-
-
-
-
-
 @keyframes rotate {
     0% {
         transform: rotate(0deg);
@@ -265,4 +259,5 @@
     .patchy {
     padding: 1rem 1rem 1rem 2rem;
     }
+
  }

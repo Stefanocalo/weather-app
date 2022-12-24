@@ -10,7 +10,8 @@ export const Hourly = () => {
     const isLoading = useSelector((state) => state.forecast.isLoading);
 
     let today = new Date();
-    let now = today.getHours() + 1;
+
+
 
 
     const renderHourly = () => {
@@ -25,7 +26,7 @@ export const Hourly = () => {
             let sunsetF = Math.floor(forecast.forecast.forecastday[0].astro.sunset[0] + forecast.forecast.forecastday[0].astro.sunset[1]);
             let dawn = (Math.floor(forecast.forecast.forecastday[0].astro.sunrise[0] + forecast.forecast.forecastday[0].astro.sunrise[1]));
             let sunsetHF = sunsetF + 12;
-
+            let now = Math.floor(forecast.current.last_updated[11]+forecast.current.last_updated[12]) + 1;
             return(
                 <>
                 <div className="hour">

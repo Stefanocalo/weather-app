@@ -14,7 +14,7 @@ export const Next = () => {
     const  forecast = useSelector((state) => state.forecast.forecast);
     const  isLoading = useSelector((state) => state.forecast.isLoading);
     let today = new Date();
-    let now = today.getHours();
+
 
     const weekday = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
 
@@ -34,6 +34,8 @@ export const Next = () => {
             let dawn = (Math.floor(forecast.forecast.forecastday[0].astro.sunrise[0] + forecast.forecast.forecastday[0].astro.sunrise[1]));
             let sunsetHF = sunsetF + 12;
             let dayCode = today.getDay()
+            let now = Math.floor(forecast.current.last_updated[11]+forecast.current.last_updated[12]) + 1;
+
             return(
                 <>
                     {forecast.forecast.forecastday.map((day, index) => (

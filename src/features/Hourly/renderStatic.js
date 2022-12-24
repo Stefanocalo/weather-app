@@ -21,8 +21,6 @@ export const renderStatic = (code, actual, sunsetH, dawn) => {
         break;
         case 1003:
             if(actual < sunsetH && actual >= dawn) {
-                console.log(actual);
-                console.log('ok');
                 return(
                     <div className="cloudy">
                         <BsSunFill className="staticSun1"/>

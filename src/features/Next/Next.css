@@ -27,7 +27,7 @@
 }
 
 .day.active {
-    height: 60rem;
+    height: auto;
     animation: open 0.2s linear;
 }
 

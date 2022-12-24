@@ -51,12 +51,12 @@ export const Next = () => {
                                 {renderStatic(forecast.forecast.forecastday[index].day.condition.code, now, 100, 0)}
                                 <div className="highLowContainer">
                                     <div className='maxMin'>
-                                        <p className="highLow">H:</p>
-                                        <p className="temp">{`${Math.floor(forecast.forecast.forecastday[index].day.maxtemp_c)}°`}</p>
+                                        <p className="highLow">L:</p>
+                                        <p className="temp">{`${Math.floor(forecast.forecast.forecastday[index].day.mintemp_c)}°`}</p>
                                     </div>
                                     <div className='maxMin'>
                                         <p className="highLow">H:</p>
-                                        <p className="temp">{`${Math.floor(forecast.forecast.forecastday[index].day.mintemp_c)}°`}</p>
+                                        <p className="temp">{`${Math.floor(forecast.forecast.forecastday[index].day.maxtemp_c)}°`}</p>
                                     </div>
                                 </div>
 

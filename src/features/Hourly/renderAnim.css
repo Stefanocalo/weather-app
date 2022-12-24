@@ -115,15 +115,15 @@
 
 .clear,
 .cloudy,
-.overCast,
+.animoverCast,
 .fog,
 .patchy,
 .thunder {
     padding: 1rem;
 }
 
-.overCast {
-    padding-left: 9rem;
+.animoverCast {
+    padding-left: 2rem;
 }
 
 @keyframes rotate {

@@ -41,7 +41,7 @@ export const renderAnim = (code, actual, sunsetH, dawn) => {
         case 1006:
         case 1009:
             return(
-                <div className="overCast">
+                <div className="animoverCast">
                     <AiFillCloud className="animCloud1" />
                     <AiFillCloud className="animCloud2" />
                 </div>

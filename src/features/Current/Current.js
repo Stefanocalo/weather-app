@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-
+import { CurrentSkeleton } from "./CurrentSkeleton";
 
 import { renderAnim } from "../Hourly/renderAnim";
 import '../Hourly/renderAnim.css';
@@ -19,9 +19,7 @@ export const Current = () => {
 
         if(isLoading) {
             return(
-                <div className="CurrentContainer">
-                    <p>Loading...</p>
-                </div>
+                <CurrentSkeleton />
             )
         }
 

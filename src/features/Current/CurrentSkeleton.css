@@ -1,0 +1,51 @@
+.loadingCurrentContainer {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.loadingRight,
+.loadingLeft {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loadingIcon {
+    width: 7rem;
+    height: 7rem;
+    margin: 1rem;
+}
+
+.loadingCity {
+    width: 15rem;
+    height: 3rem;
+}
+
+.loadingCondition {
+    width: 7rem;
+}
+
+.loadingDeg {
+    width: 4rem;
+    height: 4rem;
+    margin: 1rem;
+}
+
+.loadingCond {
+    width: 7rem;
+    height: 1.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .loadingCurrentContainer {
+        flex-direction: column;
+        margin-top: 2rem;
+    }
+
+    .deg {
+        margin-top: 1rem;
+    } 
+ }

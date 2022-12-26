@@ -1,0 +1,43 @@
+
+.hourWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.dayContainer {
+    width: 100%;
+    border: 1px solid white;
+    height: 4rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(240, 240, 240, 0.3);
+ 
+}
+
+.loadingDay {
+    height: auto;
+    width: 90%;
+   
+}
+
+.dayContainer.active {
+    height: auto;
+    animation: open 0.2s linear;
+}
+
+.dayContainer:nth-child(1) {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.dayContainer:nth-child(3) {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.loadingText {
+    width: 4rem;
+}
+

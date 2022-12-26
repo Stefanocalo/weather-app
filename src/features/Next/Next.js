@@ -4,6 +4,7 @@ import {BsDropletHalf, BsSunglasses, BsSnow} from 'react-icons/bs';
 import {BiWind} from 'react-icons/bi';
 import {WiHumidity} from 'react-icons/wi';
 import {MdVisibility} from 'react-icons/md';
+import { NextSkeleton } from "./NextSkeleton";
 
 import './Next.css';
 
@@ -24,9 +25,7 @@ export const Next = () => {
     const renderNext = () => {
         if(isLoading) {
             return(
-                <div>
-                    <p>loading</p>
-                </div>
+                <NextSkeleton />
             )
         }
         if(forecast.location){

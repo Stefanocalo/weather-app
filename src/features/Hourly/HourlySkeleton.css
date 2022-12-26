@@ -1,0 +1,30 @@
+.loadingHourlyContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loadingHourlyWrapper {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height:  auto;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.loadingHour {
+    margin: 0 1rem;
+}
+
+.loadingTime,
+.loadingTemp {
+    width: 3rem;
+}
+
+.loadingStIcon {
+    height: 3rem;
+    width: 3rem;
+    margin: 1rem 0;
+}

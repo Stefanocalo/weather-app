@@ -1,0 +1,31 @@
+.generalLoadingWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.loadingGeneral {
+    width: 90%;
+    height: 72rem;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 15px;
+}
+
+.card {
+    height: 16rem;
+    width: 16rem;
+    border-radius: 15px;
+    background-color: rgba(220, 226, 232, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0;
+}

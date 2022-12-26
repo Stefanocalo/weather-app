@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import {renderStatic} from './renderStatic.js'
-
+import { HourlySkeleton } from "./HourlySkeleton.js";
 import './Hourly.css'
 
 export const Hourly = () => {
@@ -17,9 +17,7 @@ export const Hourly = () => {
     const renderHourly = () => {
         if(isLoading) {
             return(
-                <div>
-                    <p>Loading...</p>
-                </div>
+                   <HourlySkeleton />
             )
         }
         if(forecast.location) {

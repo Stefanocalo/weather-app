@@ -5,6 +5,7 @@ import {BiWind} from 'react-icons/bi';
 import {WiHumidity} from 'react-icons/wi';
 import {MdVisibility} from 'react-icons/md';
 import { NextSkeleton } from "./NextSkeleton";
+import {FaTemperatureHigh} from 'react-icons/fa';
 
 import './Next.css';
 
@@ -47,7 +48,7 @@ export const Next = () => {
                                 {dayCode + index === dayCode && <p>Today</p>}
                                 {dayCode + index <= 6 && dayCode + index !== dayCode && <p>{weekday[dayCode + index]}</p>}
                                 {dayCode + index > 6 && dayCode + index !== dayCode  && <p>{weekday[(dayCode + index) - 7]}</p>}
-                                {renderStatic(forecast.forecast.forecastday[index].day.condition.code, now, 100, 0)}
+                                {renderStatic(day.day.condition.code, now, 100, 0)}
                                 <div className="highLowContainer">
                                     <div className='maxMin'>
                                         <p className="highLow">L:</p>
@@ -58,9 +59,53 @@ export const Next = () => {
                                         <p className="temp">{`${Math.floor(forecast.forecast.forecastday[index].day.maxtemp_c)}°`}</p>
                                     </div>
                                 </div>
-
                             </div>
+
                             <div className="bottom">
+                                {index !== 0 && <><div className="top">
+                                    <p>09:00</p>
+                                    {renderStatic(day.hour[9].condition.code, 9, sunsetHF, dawn)}
+                                    <div className='highLowContainer'>
+                                        <div className="section">
+                                            <WiHumidity />
+                                            <p>72%</p>
+                                        </div>
+                                        <div className="section">
+                                            <FaTemperatureHigh />
+                                            <p>{`${day.hour[9].temp_c}°`}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="top">
+                                    <p>15:00</p>
+                                    {renderStatic(day.hour[15].condition.code, 15, sunsetHF, dawn)}
+                                    <div className='highLowContainer'>
+                                        <div className="section">
+                                            <WiHumidity />
+                                            <p>72%</p>
+                                        </div>
+                                        <div className="section">
+                                            <FaTemperatureHigh />
+                                            <p>{`${day.hour[15].temp_c}°`}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="top">
+                                    <p>21:00</p>
+                                    {renderStatic(day.hour[21].condition.code, 21, sunsetHF, dawn)}
+                                    <div className='highLowContainer'>
+                                        <div className="section">
+                                            <WiHumidity />
+                                            <p>72%</p>
+                                        </div>
+                                        <div className="section">
+                                            <FaTemperatureHigh />
+                                            <p>{`${day.hour[21].temp_c}°`}</p>
+                                        </div>
+                                    </div>
+                                </div> </>}
+                                
+                              
                                 <div className="row">
                                     <div className="card" >
                                         <p className="cardTitle">Precipitation</p>
@@ -110,10 +155,7 @@ export const Next = () => {
                                     </div>              
                                 </div>
                             </div>
-                        </div>
-                        
-                        
-                        
+                        </div>    
                     ))}
                 </>
             )

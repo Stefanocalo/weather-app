@@ -45,7 +45,7 @@
     background-color: rgba(240, 240, 240, 0.3);
     height: 4rem;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 3fr;
     grid-template-rows: 2rem;
     align-items: center;
     justify-content: space-around;
@@ -75,15 +75,19 @@
 .maxMin,
 .highLowContainer {
     display: flex;
-    padding: 0 0.5rem;
+    justify-content: space-around;
+    margin: 0 0.5rem;
 }
 
 
 .section {
     display: flex;
     align-items: center;
-    margin: 0 0.2rem;
-    font-weight: 600;
+    margin: 0 0.5rem;
+}
+
+.sectionIcon {
+    font-size: 1.2rem;
 }
 
 .card {

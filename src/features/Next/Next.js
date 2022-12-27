@@ -5,7 +5,7 @@ import {BiWind} from 'react-icons/bi';
 import {WiHumidity} from 'react-icons/wi';
 import {MdVisibility} from 'react-icons/md';
 import { NextSkeleton } from "./NextSkeleton";
-import {FaTemperatureHigh} from 'react-icons/fa';
+import {TbTemperature} from 'react-icons/tb';
 
 import './Next.css';
 
@@ -67,11 +67,11 @@ export const Next = () => {
                                     {renderStatic(day.hour[9].condition.code, 9, sunsetHF, dawn)}
                                     <div className='highLowContainer'>
                                         <div className="section">
-                                            <WiHumidity />
+                                            <WiHumidity className="sectionIcon"/>
                                             <p>72%</p>
                                         </div>
                                         <div className="section">
-                                            <FaTemperatureHigh />
+                                            <TbTemperature className="sectionIcon"/>
                                             <p>{`${day.hour[9].temp_c}°`}</p>
                                         </div>
                                     </div>
@@ -85,7 +85,7 @@ export const Next = () => {
                                             <p>72%</p>
                                         </div>
                                         <div className="section">
-                                            <FaTemperatureHigh />
+                                            <TbTemperature />
                                             <p>{`${day.hour[15].temp_c}°`}</p>
                                         </div>
                                     </div>
@@ -99,7 +99,7 @@ export const Next = () => {
                                             <p>72%</p>
                                         </div>
                                         <div className="section">
-                                            <FaTemperatureHigh />
+                                            <TbTemperature />
                                             <p>{`${day.hour[21].temp_c}°`}</p>
                                         </div>
                                     </div>

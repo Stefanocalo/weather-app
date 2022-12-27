@@ -40,7 +40,6 @@ export const Header = () => {
                 dispatch(fetchForecast(posR))
             })
            } else {
-            
             dispatch(fetchForecast('Milan'));
            }
     }, [])

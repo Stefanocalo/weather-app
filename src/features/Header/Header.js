@@ -38,6 +38,9 @@ export const Header = () => {
 
                 const posR = `${latitude},${longitude}`
                 dispatch(fetchForecast(posR))
+            }, (error) => {
+                alert(error.code + ':' + error.message)
+                console.log(error);
             })
            } else {
             dispatch(fetchForecast('Milan'));

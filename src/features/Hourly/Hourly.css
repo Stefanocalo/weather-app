@@ -51,13 +51,13 @@
 .sleet,
 .ice {
     display: flex;
-    padding-left: 0;
 }
 
 .fog {
     display: flex;
     align-items: center;
     flex-direction: column;
+    width: 4rem;
 }
 
 .rain {
@@ -162,4 +162,14 @@
     background-color: rgb(231, 241, 255);
     border-radius: 5px;
 }
+
+.rain,
+.snow,
+.ice,
+.cloudy,
+.patchy {
+    padding: 0
+}    
+
+
 

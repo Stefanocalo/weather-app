@@ -116,14 +116,15 @@
 .clear,
 .cloudy,
 .animoverCast,
-.fog,
 .patchy,
-.thunder {
+.thunder,
+.fog,
+.snow {
     padding: 1rem;
 }
 
 .animoverCast {
-    padding-left: 2rem;
+    padding-left: 1rem;
 }
 
 @keyframes rotate {
@@ -261,7 +262,16 @@
     }
  
     .patchy {
-    padding: 1rem 1rem 1rem 2rem;
+    padding: 1rem 1rem 1rem 0rem;
     }
+
+    .cloudy {
+        padding-left: 0;
+    }
+
+    .fog {
+        padding: 0
+    }
+
 
  }

@@ -118,10 +118,17 @@
 .animoverCast,
 .patchy,
 .thunder,
-.fog,
 .snow {
     padding: 1rem;
 }
+
+.fogA {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 4rem;
+}
+
 
 .animoverCast {
     padding-left: 1rem;
@@ -268,10 +275,4 @@
     .cloudy {
         padding-left: 0;
     }
-
-    .fog {
-        padding: 0
-    }
-
-
  }

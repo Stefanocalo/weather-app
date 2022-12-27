@@ -50,7 +50,7 @@ export const renderAnim = (code, actual, sunsetH, dawn) => {
         case 1030:
         case 1135:
             return(
-                <div className="fog">
+                <div className="fogA">
                     <AiFillCloud className="animFogCloud" />
                     <div className="animline"></div>
                     <div className="animline1"></div>

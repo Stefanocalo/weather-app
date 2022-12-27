@@ -7,7 +7,7 @@ export const GeneralSkeleton = () => {
         <div className="generalLoadingWrapper">
             <div className="loadingGeneral">
                 {Array(4).fill(0).map((item, index) => (
-                    <div className="row">
+                    <div className="row" key={index}>
                         <div className="card">
                             <Skeleton />
                             <Skeleton /> 

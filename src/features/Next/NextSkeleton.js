@@ -7,7 +7,7 @@ export const NextSkeleton = () => {
         <div className="hourWrapper">
             <div className="loadingDay">
             {Array(3).fill(0).map((item,index) => (
-                <div className="dayContainer">
+                <div className="dayContainer" key={index}>
                     <Skeleton className="loadingText"/>
                     <Skeleton className="loadingStIcon"/>
                     <Skeleton className="loadingText"/>

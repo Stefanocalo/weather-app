@@ -5,7 +5,7 @@ import './CurrentSkeleton.css';
 
 export const CurrentSkeleton = () => {
     return(
-        <div className="loadingCurrentContainer"ß>
+        <div className="loadingCurrentContainer">
             <div className="loadingLeft">
                 <Skeleton className="loadingCity"/>
                 <Skeleton className="loadingIcon"/>

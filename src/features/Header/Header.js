@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchForecast, getHints, setSearchTerm, setshowingResults } from "../../store/forecastSlice";
 import { HintSkeleton } from "./HintSkeleton";
 
-import {AiFillCloud} from 'react-icons/ai';
+import {AiFillCloud, AiOutlineConsoleSql} from 'react-icons/ai';
 
 import './Header.css';
 import Skeleton from "react-loading-skeleton";
@@ -31,7 +31,17 @@ export const Header = () => {
     }, [searchInput]);
 
     useEffect(() => {
-        dispatch(fetchForecast('Milan'))
+        if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition((position) => {
+                const latitude = position.coords.latitude;
+                const longitude = position.coords.longitude;
+
+                const posR = `${latitude},${longitude}`
+                dispatch(fetchForecast(posR))
+            })
+           } else {
+            dispatch(fetchForecast('Milan'))
+           }
     }, [])
 
     

@@ -31,12 +31,12 @@
     animation: open 0.2s linear;
 }
 
-.day:nth-child(1) {
+.day:nth-child(2) {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
 
-.day:nth-child(3) {
+.day:nth-child(4) {
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 }
@@ -53,6 +53,12 @@
     color: rgb(0,0,0);
     font-size: 1.2rem;
     cursor: pointer;
+}
+
+.sub {
+    font-weight: 600;
+    padding: 1rem 0;
+    text-align: center;
 }
 
 .static {
@@ -89,6 +95,12 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+}
+
+.genralContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .cardContent {

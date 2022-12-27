@@ -164,6 +164,7 @@ export const Next = () => {
 
     return(
         <div className="nextContainer"> 
+            <p className="sub">3-day forecast</p>
             {renderNext()}
         </div>
     )

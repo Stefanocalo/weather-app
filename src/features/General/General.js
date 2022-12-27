@@ -96,7 +96,8 @@ export const General = () => {
 
 
     return(
-        <div>
+        <div className="genralContainer"> 
+            <p className="sub">Today stats</p>
             {renderGeneral()}
         </div>
     )

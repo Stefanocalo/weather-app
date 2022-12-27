@@ -31,7 +31,7 @@ export const Header = () => {
     }, [searchInput]);
 
     useEffect(() => {
-        if ("geolocation" in navigator) {
+        try {
             navigator.geolocation.getCurrentPosition((position) => {
                 const latitude = position.coords.latitude;
                 const longitude = position.coords.longitude;
@@ -39,7 +39,8 @@ export const Header = () => {
                 const posR = `${latitude},${longitude}`
                 dispatch(fetchForecast(posR))
             })
-           } else {
+           } catch(error) {
+            console.log(error)
             dispatch(fetchForecast('Milan'))
            }
     }, [])

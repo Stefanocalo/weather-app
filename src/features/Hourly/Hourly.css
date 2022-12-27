@@ -168,7 +168,11 @@
 .ice,
 .cloudy,
 .patchy {
-    padding: 0
+    padding-left: 0rem
+}
+
+.clear {
+    padding-left: 1rem;
 }
 
 

@@ -163,16 +163,26 @@
     border-radius: 5px;
 }
 
+h1,
+h3 {
+    margin: 1rem 0;
+}
+
 .rain,
 .snow,
 .ice,
 .cloudy,
-.patchy {
-    padding-left: 0rem
+.patchy,
+.overCast {
+    padding: 2rem 0
 }
 
 .clear {
-    padding-left: 1rem;
+    padding: 2rem 1.2rem;
+}
+
+.fog {
+    padding: 2rem 0rem;
 }
 
 

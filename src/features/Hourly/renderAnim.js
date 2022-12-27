@@ -24,14 +24,14 @@ export const renderAnim = (code, actual, sunsetH, dawn) => {
         case 1003:
             if(actual < sunsetH && actual >= dawn) {
                 return(
-                    <div className="cloudy">
+                    <div className="cloudyA">
                         <BsSunFill className="animSun1"/>
                         <AiFillCloud className="animCloud" />
                     </div>
                 )
             } else if(actual >= sunsetH || actual >= 0 && actual < dawn) {
                 return(
-                    <div className="cloudy">
+                    <div className="cloudyA">
                         <BsFillMoonStarsFill className="animMoon1" />
                         <AiFillCloud className="animCloud" />
                     </div>

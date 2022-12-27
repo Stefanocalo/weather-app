@@ -113,13 +113,15 @@
     animation: ice2 infinite 3s 1s;
 }
 
-.clear,
-.cloudy,
 .animoverCast,
 .patchy,
 .thunder,
 .snow {
-    padding: 1rem;
+    padding-left: 1rem;
+}
+
+.cloudyA {
+    padding: 1rem 2rem ;
 }
 
 .fogA {
@@ -269,10 +271,10 @@
     }
  
     .patchy {
-    padding: 1rem 1rem 1rem 0rem;
+    padding: 1rem 1rem 1rem 1rem;
     }
 
-    .cloudy {
-        padding-left: 0;
+    .fogA {
+        margin-left: 1.8rem
     }
  }

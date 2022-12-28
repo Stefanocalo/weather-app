@@ -111,11 +111,7 @@ export const Header = () => {
 
     return(
         <div className="header">
-            <div className="logo">
-                <AiFillCloud className="logoIcon" />
-                <p>City<span>Weather</span></p>
-
-            </div>
+            
             <div className="search">
                 <form
                 onSubmit={handleSubmit}
@@ -123,7 +119,7 @@ export const Header = () => {
                     <input
                     className="searchInput"
                     type='text'
-                    placeholder="search"
+                    placeholder="Search location..."
                     value={searchInput}
                     onChange={handleInputChange}>
                     </input>

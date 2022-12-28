@@ -24,10 +24,10 @@ export const Current = () => {
         }
 
         if(forecast.location) {
-            let now = Math.floor(forecast.current.last_updated[11]+forecast.current.last_updated[12]) + 1;
-            let sunsetF = Math.floor(forecast.forecast.forecastday[0].astro.sunset[0] + forecast.forecast.forecastday[0].astro.sunset[1]);
-            let dawn = (Math.floor(forecast.forecast.forecastday[0].astro.sunrise[0] + forecast.forecast.forecastday[0].astro.sunrise[1]));
-            let sunsetHF = sunsetF + 12;
+            let now = Math.floor(forecast.current.last_updated[11]+forecast.current.last_updated[12]+forecast.current.last_updated[14]+forecast.current.last_updated[15]);
+            let sunsetF = Math.floor(forecast.forecast.forecastday[0].astro.sunset[0] + forecast.forecast.forecastday[0].astro.sunset[1] + forecast.forecast.forecastday[0].astro.sunset[3] + forecast.forecast.forecastday[0].astro.sunset[4]);
+            let dawn = (Math.floor(forecast.forecast.forecastday[0].astro.sunrise[0] + forecast.forecast.forecastday[0].astro.sunrise[1] + forecast.forecast.forecastday[0].astro.sunrise[3] + forecast.forecast.forecastday[0].astro.sunrise[4]));
+            let sunsetHF = sunsetF + 1200;
 
             return(
                 <div className="CurrentContainer">

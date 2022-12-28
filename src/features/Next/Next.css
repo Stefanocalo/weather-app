@@ -104,20 +104,6 @@
 
 }
 
-.cardTitle {
-    font-size: 2rem;
-    font-weight: 600;
-}
-
-.cardIcon {
-    font-size: 2rem;
-}
-
-.data {
-    padding: 2rem 0;
-    font-size: 1.5rem;
-}
-
 .row {
     display: grid;
     grid-template-columns: 1fr 1fr;

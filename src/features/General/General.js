@@ -133,7 +133,7 @@ export const General = () => {
 
     return(
         <div className="genralContainer"> 
-            <p className="sub">Today stats</p>
+            <p className="sub">Current stats</p>
             {renderGeneral()}
         </div>
     )

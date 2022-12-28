@@ -1,11 +1,12 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import {BsDropletHalf, BsSunglasses, BsSnow} from 'react-icons/bs';
+import {BsDropletHalf, BsSunglasses, BsSnow, BsFillSunsetFill, BsFillSunriseFill} from 'react-icons/bs';
 import {BiWind} from 'react-icons/bi';
-import {WiHumidity} from 'react-icons/wi';
+import {WiHumidity, WiMoonrise, WiMoonset, WoMoonset} from 'react-icons/wi';
 import {MdVisibility} from 'react-icons/md';
 import { NextSkeleton } from "./NextSkeleton";
 import {TbTemperature} from 'react-icons/tb';
+import {FaTemperatureHigh, FaTemperatureLow} from 'react-icons/fa';
 
 import './Next.css';
 
@@ -104,55 +105,115 @@ export const Next = () => {
                                         </div>
                                     </div>
                                 </div> </>}
-                                
-                              
-                                <div className="row">
-                                    <div className="card" >
-                                        <p className="cardTitle">Precipitation</p>
-                                        <div className="cardContent">
-                                            <BsDropletHalf  className="cardIcon"/>
-                                            <p className='data'>{`${forecast.forecast.forecastday[index].day.totalprecip_mm} mm`}</p>
-                                        </div>
-                                    </div>
-                                    <div className="card" >
-                                        <p className="cardTitle">Wind</p>
-                                        <div className="cardContent">
-                                            <BiWind  className="cardIcon"/>
-                                            <p className='data'>{`${forecast.forecast.forecastday[index].day.maxwind_kph} km/h`}</p>
-                                        </div>
-                                    </div>
+                            </div>
+                            <div className="row">
+                                <div className="rowTitle">
+                                    <BsFillSunriseFill  className="rowIcon"/>
+                                    <p>Sunrise: {day.astro.sunrise}</p>
                                 </div>
-                                <div className="row">
-                                    <div className="card" >
-                                        <p className="cardTitle">Umidity</p>
-                                        <div className="cardContent">
-                                            <WiHumidity  className="cardIcon"/>
-                                            <p className='data'>{`Avg. ${forecast.forecast.forecastday[index].day.avghumidity} %`}</p>
-                                        </div>
-                                    </div> 
-                                    <div className="card" >
-                                        <p className="cardTitle">UV Index</p>
-                                        <div className="cardContent">
-                                            <BsSunglasses  className="cardIcon"/>
-                                            <p className='data'>{`Avg. ${forecast.forecast.forecastday[index].day.uv}`}</p>
-                                        </div>
-                                    </div>               
-                                </div> 
-                                <div className="row">
-                                    <div className="card" >
-                                        <p className="cardTitle">Visibility</p>
-                                        <div className="cardContent">
-                                            <MdVisibility  className="cardIcon"/>
-                                            <p className='data'>{`Avg. ${forecast.forecast.forecastday[index].day.avgvis_km} km`}</p>
-                                        </div>
-                                    </div> 
-                                    <div className="card" >
-                                        <p className="cardTitle">Snow Chance</p>
-                                        <div className="cardContent">
-                                            <BsSnow  className="cardIcon"/>
-                                            <p className='data'>{`${forecast.forecast.forecastday[index].day.uv} %`}</p>
-                                        </div>
-                                    </div>              
+                                <div className="rowTitle">
+                                    <BsFillSunsetFill  className="rowIcon"/>
+                                    <p>Sunset: {day.astro.sunset}</p>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="rowTitle">
+                                    <WiMoonrise  className="rowIcon"/>
+                                    <p>Moonrise: {day.astro.moonrise}</p>
+                                </div>
+                                <div className="rowTitle">
+                                    <WiMoonset  className="rowIcon"/>
+                                    <p>Moonset: {day.astro.moonset}</p>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="rowTitle">
+                                    <FaTemperatureHigh  className="rowIcon"/>
+                                    <p>High: {day.day.maxtemp_c}°</p>
+                                </div>
+                                <div className="rowTitle">
+                                    <FaTemperatureLow  className="rowIcon"/>
+                                    <p>Low: {day.day.mintemp_c}°</p>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="rowTitle">
+                                    <BiWind  className="rowIcon"/>
+                                    <p>Max Wind:</p>
+                                </div>
+                                <div className="rowTitle">
+                                    <BsDropletHalf  className="noShow"/>
+                                    <p>{day.day.maxwind_kph} km/h</p>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="rowTitle">
+                                    <BsDropletHalf  className="rowIcon"/>
+                                    <p>Precipitations:</p>
+                                </div>
+                                <div className="rowTitle">
+                                    <BsDropletHalf  className="noShow"/>
+                                    <p>{day.day.totalprecip_mm} mm</p>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="rowTitle">
+                                    <BsDropletHalf  className="rowIcon"/>
+                                    <p>Chance of rain:</p>
+                                </div>
+                                <div className="rowTitle">
+                                    <BsDropletHalf  className="noShow"/>
+                                    <p>{day.day.daily_chance_of_rain} %</p>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="rowTitle">
+                                    <BsSnow  className="rowIcon"/>
+                                    <p>Snow:</p>
+                                </div>
+                                <div className="rowTitle">
+                                    <BsDropletHalf  className="noShow"/>
+                                    <p>{day.day.totalsnow_cm} cm</p>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="rowTitle">
+                                    <BsSnow  className="rowIcon"/>
+                                    <p>Chance of snow:</p>
+                                </div>
+                                <div className="rowTitle">
+                                    <BsDropletHalf  className="noShow"/>
+                                    <p>{day.day.daily_chance_of_snow} %</p>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="rowTitle">
+                                    <MdVisibility  className="rowIcon"/>
+                                    <p>Visibility:</p>
+                                </div>
+                                <div className="rowTitle">
+                                    <BsDropletHalf  className="noShow"/>
+                                    <p>{day.day.avgvis_km} km</p>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="rowTitle">
+                                    <WiHumidity  className="rowIcon"/>
+                                    <p>Umidity:</p>
+                                </div>
+                                <div className="rowTitle">
+                                    <BsDropletHalf  className="noShow"/>
+                                    <p>{day.day.avghumidity} %</p>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="rowTitle">
+                                    <BsSunglasses  className="rowIcon"/>
+                                    <p>UV Index:</p>
+                                </div>
+                                <div className="rowTitle">
+                                    <BsDropletHalf  className="noShow"/>
+                                    <p>{day.day.uv} </p>
                                 </div>
                             </div>
                         </div>    

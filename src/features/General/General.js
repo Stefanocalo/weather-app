@@ -5,7 +5,6 @@ import {AiFillCloud} from 'react-icons/ai';
 import {BiWind} from 'react-icons/bi';
 import {WiHumidity, WiBarometer} from 'react-icons/wi';
 import {MdVisibility} from 'react-icons/md';
-import { GeneralSkeleton } from "./GeneralSkeleton";
 
 export const General = () => {
     const  forecast = useSelector((state) => state.forecast.forecast);
@@ -15,7 +14,7 @@ export const General = () => {
 
         if(isLoading) {
             return(
-                <GeneralSkeleton />
+                <div></div>
             )
         }
 

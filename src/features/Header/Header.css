@@ -27,14 +27,17 @@ input[type=text]:focus{
 }
 
 input[type=text]:focus + button {
-    opacity: 1;
+    position: static;
+    right: 5%;
 }
 
 
 button {
+    padding: 0.6rem 1rem;
+    position: fixed;
+    right: -100%;
+    transition: 0.3s;
     border-radius: 15px;
-    padding: 0.5rem 1rem ; 
-   opacity: 0;
     
 }
 
@@ -79,9 +82,8 @@ button {
 @media only screen and (max-width: 600px) {
    .header {
         flex-direction: column; 
-        justify-content: flex-start;   
-        height: 4rem;
-        padding: 1rem 0;
+        justify-content: center;   
+        height: 5rem;
         position: fixed;
         bottom: 0;
         backdrop-filter: blur(3rem);    
@@ -89,11 +91,11 @@ button {
 
    
     input {
-        padding: 0.6rem 6rem;
+        padding: 0.7rem 6rem;
     }
     
     input[type=text]:focus{
-        padding: 0.6rem 4.3rem;
+        padding: 0.7rem 4.3rem;
     }
 
     input[type=text]:focus + button {

@@ -90,16 +90,6 @@
     font-size: 1.2rem;
 }
 
-.card {
-    height: 16rem;
-    width: 16rem;
-    border-radius: 15px;
-    background-color: rgba(220, 226, 232, 0.3);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
 
 .genralContainer {
     display: flex;
@@ -129,10 +119,27 @@
 }
 
 .row {
-    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 1rem;
+    height: 4rem;
+    font-weight: 600;
+}
+
+.rowTitle {
     display: flex;
-    justify-content: space-around;
-    padding: 1rem 0;
+}
+
+.rowIcon {
+    margin: 0 1rem;
+    font-size: 1.4rem;
+}
+
+.noShow {
+    opacity: 0;
+    margin: 0 1rem;
+    font-size: 1.4rem;
 }
 
 

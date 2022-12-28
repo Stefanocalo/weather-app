@@ -34,8 +34,6 @@ input[type=text]:focus + button {
 
 button {
     padding: 0.6rem 1rem;
-    position: fixed;
-    right: -100%;
     transition: 0.3s;
     border-radius: 15px;
     
@@ -46,9 +44,9 @@ button {
     color: rgb(0, 0, 0);
     border-radius: 15px;
     height: auto;
-    width: 12rem;
+    width: 30rem;
     position: absolute;
-    top: 2.5rem;
+    top: 5rem;
     display: flex;
     flex-direction: column;
     padding: 0.2rem;
@@ -100,6 +98,7 @@ button {
 
     input[type=text]:focus + button {
         position: static;
+        cursor: pointer;
         right: 0;
     }
     
@@ -107,6 +106,7 @@ button {
     button {
         padding: 0.6rem 1rem;
         position: fixed;
+        cursor: pointer;
         right: -100%;
         transition: 0.3s;
         

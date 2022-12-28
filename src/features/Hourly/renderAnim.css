@@ -129,6 +129,7 @@
     align-items: center;
     flex-direction: column;
     width: 4rem;
+    padding-left: 3.5rem;
 }
 
 
@@ -275,6 +276,7 @@
     }
 
     .fogA {
-        margin-left: 1.8rem
+        margin-left: 1.8rem;
+        padding-left: 0;
     }
  }

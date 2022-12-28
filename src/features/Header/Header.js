@@ -119,7 +119,7 @@ export const Header = () => {
                     <input
                     className="searchInput"
                     type='text'
-                    placeholder="Search location..."
+                    placeholder="Search"
                     value={searchInput}
                     onChange={handleInputChange}>
                     </input>

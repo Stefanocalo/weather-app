@@ -37,7 +37,8 @@ const initialState = {
        }
     ],
     isLoading: false,
-    error: false
+    error: false,
+    showingBookmarks: false
 }
 
 
@@ -47,26 +48,31 @@ const bookmarksSlice = createSlice({
     reducers: {
         startGetBookmarks: (state) => {
             state.isLoading = true;
-            state.error = false
+            state.error = false;
+            state.showingBookmarks = false;
         },
         successGetBookmarks: (state, action) => {
             state.isLoading = false;
             state.error = false;
             state.bookmarks[action.payload.index].data = action.payload.data;
         },
+        setShowingBookmarks: (state) => {
+            state.showingBookmarks = true;  
+        },
         failGetBookmarks: (state) => {
             state.isLoading = false;
             state.error = true;
+            state.showingBookmarks = false;
         },
         addBookmark: (state, action) => {
-            return state.bookmarks.push({
-                city: action.name,
+            return {...state, bookmarks: state.bookmarks.push({
+                city: action.payload.name,
                 id: uuid(),
                 forecacst: [action.payload]
-            })
+            })}
         },
         removeBookmark: (state,action) => {
-            return state.bookmarks.filter(element => element.id !== action.id);
+            return {...state, bookmarks: state.bookmarks.filter(element => element.id !== action.payload.id)}
         }
     }
 });
@@ -75,6 +81,7 @@ export default bookmarksSlice.reducer;
 export const {
     startGetBookmarks,
     successGetBookmarks,
+    setShowingBookmarks,
     failGetBookmarks,
     addBookmark,
     removeBookmark
@@ -87,6 +94,7 @@ export const fetchBookmarksData = (query, index) => async (dispatch) => {
         dispatch(startGetBookmarks());
         const forecast = await getForecast(query);
         dispatch(successGetBookmarks({index: index, data: forecast}));
+        dispatch(setShowingBookmarks());
     } catch(error) {
         console.log(error);
         dispatch(failGetBookmarks());

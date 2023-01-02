@@ -1,0 +1,78 @@
+.bookmarksWrapper {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    justify-content: column;
+}
+
+.bookmarksContainer {
+    width: 90%;
+    height: 100%;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.bookmark {
+    background-color: #aed4ff66;
+    width: 40%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1rem;
+    border-radius: 15px;
+}
+
+.Bleft,
+.Bright {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 80%;
+    padding-bottom: 1rem;
+}
+
+.Bcity,
+.Btemp {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.Bcondition,
+.BHL {
+    font-weight: 600;
+}
+
+.delete {
+    display: flex;
+    justify-content: flex-end;
+    width: 98%;
+    margin-top: 0.3rem;
+    margin-right: 0.3rem;
+}
+
+.close {
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .bookmarksContainer{
+        margin-bottom: 6rem;
+    }
+
+    .bookmark {
+        flex-direction: column;
+        width: 80%;
+    }
+
+}
+

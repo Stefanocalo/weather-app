@@ -1,18 +1,29 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { CurrentSkeleton } from "./CurrentSkeleton";
+import { addBookmark } from "../../store/bookmarksSlice";
 
 import { renderAnim } from "../Hourly/renderAnim";
 import '../Hourly/renderAnim.css';
 
 import './Current.css'
+import uuid from "react-uuid";
 
 export const Current = () => {
 
     const forecast = useSelector((state) => state.forecast.forecast);
     const isLoading = useSelector((state) => state.forecast.isLoading);
+    const dispatch = useDispatch();
 
     let today = new Date();
+
+    const handleBookmark = (city, forecast) => {
+        dispatch(addBookmark({
+            name: city,
+            id: uuid(),
+            data: forecast
+        }))
+    }
 
 
     const renderCurrent = () => {
@@ -36,6 +47,8 @@ export const Current = () => {
                         <div className="condition">
                             {renderAnim(forecast.current.condition.code, now, sunsetHF, dawn)}
                             <h3 className="cond">{forecast.current.condition.text}</h3>
+                            <button className="bookmarkB"
+                            onClick={() => handleBookmark(forecast.location.name, forecast)}>Add to bookmarks</button>
                         </div>
                     </div>
                     <div className="right">

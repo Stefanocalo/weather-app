@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { fetchBookmarksData, removeBookmark } from "../../store/bookmarksSlice";
+import { addBookmark, fetchBookmarksData, removeBookmark } from "../../store/bookmarksSlice";
 import './Bookmarks.css';
 import {AiFillCloseCircle} from 'react-icons/ai';
 
@@ -24,7 +24,6 @@ export const Bookmarks = () => {
 
     const renderBookmarks = () => {
         if (isLoading) {
-            console.log('loading...')
             return(
                 <div>
                     <p>Loading...</p>
@@ -37,7 +36,6 @@ export const Bookmarks = () => {
         }
 
         if(forecast.location) {
-            console.log('ok');
             return(
                 <div className="bookmarksWrapper">
                     <div className="bookmarksContainer">
@@ -49,7 +47,7 @@ export const Bookmarks = () => {
                                     < AiFillCloseCircle className="close"/>
                                 </div>
                                 <div className="Bleft">
-                                    <p className="Bcity">{bookmark.city}</p>
+                                    <p className="Bcity">{bookmark.data.location.name}</p>
                                     <p className="Btemp">{bookmark.data.current.temp_c}°</p>
                                 </div>
                                 <div className="Bright">

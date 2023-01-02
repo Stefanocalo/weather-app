@@ -65,11 +65,7 @@ const bookmarksSlice = createSlice({
             state.showingBookmarks = false;
         },
         addBookmark: (state, action) => {
-            return {...state, bookmarks: state.bookmarks.push({
-                city: action.payload.name,
-                id: uuid(),
-                forecacst: [action.payload]
-            })}
+            return {...state, bookmarks: [...state.bookmarks, action.payload] }
         },
         removeBookmark: (state,action) => {
             return {...state, bookmarks: state.bookmarks.filter(element => element.id !== action.payload.id)}

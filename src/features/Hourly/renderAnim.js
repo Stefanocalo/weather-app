@@ -125,7 +125,7 @@ export const renderAnim = (code, actual, sunsetH, dawn) => {
         case 1249:
         case 1189:
             return(
-                <div className="rain">
+                <div className="rainA">
                     <AiFillCloud className="animCloud3" />
                     <ImDroplet className="animDrop1" />
                     <ImDroplet className="animDrop2" />

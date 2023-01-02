@@ -1,10 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getForecast, getSearch } from "./api";
 
-
 const initialState = {
     forecast: [],
-    isLoading: false,
+    isLoading: true,
     error: false,
     searchTerm: '',
     searchLoading: false,
@@ -12,6 +11,8 @@ const initialState = {
     showingResults: false,
     searchResults: []
 }
+
+
 
 const forecastSlice = createSlice({
     name: 'forecast',

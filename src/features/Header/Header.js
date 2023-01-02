@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchForecast, getHints, setSearchTerm, setshowingResults } from "../../store/forecastSlice";
+import { fetchBookmarksData } from "../../store/bookmarksSlice";
 import { HintSkeleton } from "./HintSkeleton";
 
 import {AiFillCloud, AiOutlineConsoleSql} from 'react-icons/ai';
@@ -12,7 +13,7 @@ import 'react-loading-skeleton/dist/skeleton.css'
 export const Header = () => {
 
     const [searchInput, setSearchInput] = useState('');
-
+    
     const searchTerm = useSelector((state) => state.forecast.searchTerm );
     const hints = useSelector((state) => state.forecast.searchResults);
     const showingResults = useSelector((state) => state.forecast.showingResults);
@@ -31,6 +32,7 @@ export const Header = () => {
     }, [searchInput]);
 
     useEffect(() => {
+        
         if('geolocation' in navigator) {
             navigator.geolocation.getCurrentPosition((position) => {
                 const latitude = position.coords.latitude;

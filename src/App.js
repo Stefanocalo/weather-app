@@ -5,6 +5,7 @@ import { Current } from "./features/Current/Current";
 import { Hourly } from "./features/Hourly/Hourly";
 import { Next } from "./features/Next/Next";
 import { General } from "./features/General/General";
+import { Bookmarks } from "./features/Bookmarks/Bookmarks";
 
 export const App = () => {
     return(
@@ -15,6 +16,7 @@ export const App = () => {
             <Hourly />
             <Next />
             <General />
+            <Bookmarks />
         </SkeletonTheme>
         </>
     )

@@ -1,13 +1,18 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { setUnit } from "../../store/forecastSlice";
 import './Footer.css';
 
 export const Footer = () => {
+
+    const dispatch = useDispatch();
 
     const handleClick = () => {
         document.querySelector('.circle').classList.toggle('active');
         document.querySelector('.pill').classList.toggle('active');
         document.querySelector('.option1').classList.toggle('active');
         document.querySelector('.option2').classList.toggle('active');
+        dispatch(setUnit());
     }
 
     return(

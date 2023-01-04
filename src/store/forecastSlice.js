@@ -9,7 +9,8 @@ const initialState = {
     searchLoading: false,
     searchError: false,
     showingResults: false,
-    searchResults: []
+    searchResults: [],
+    isCelsius: true
 }
 
 
@@ -48,6 +49,9 @@ const forecastSlice = createSlice({
         },
         setshowingResults: (state) => {
             state.showingResults = false;
+        },
+        setUnit: (state) => {
+            state.isCelsius = !state.isCelsius
         }
     }
 });
@@ -61,7 +65,8 @@ export const {
     searchSuccess,
     searchLoading,
     searchError,
-    setshowingResults
+    setshowingResults,
+    setUnit
 } = forecastSlice.actions;
 
 export default forecastSlice.reducer;

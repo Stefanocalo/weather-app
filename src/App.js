@@ -6,6 +6,7 @@ import { Hourly } from "./features/Hourly/Hourly";
 import { Next } from "./features/Next/Next";
 import { General } from "./features/General/General";
 import { Bookmarks } from "./features/Bookmarks/Bookmarks";
+import { Footer } from "./features/Footer/Footer";
 
 export const App = () => {
     return(
@@ -17,6 +18,7 @@ export const App = () => {
             <Next />
             <General />
             <Bookmarks />
+            <Footer />
         </SkeletonTheme>
         </>
     )

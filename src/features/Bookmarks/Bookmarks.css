@@ -107,6 +107,7 @@
         height: 100vh;
         transition: 0.5s ease-out;
         z-index: 99;
+        padding-bottom: 5rem;
     }
 
     .bookMainContainer.active {

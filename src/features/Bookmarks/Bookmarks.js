@@ -49,19 +49,22 @@ export const Bookmarks = () => {
                     <div className="bookmarksContainer">
                     {bookmarks.length === 0 && <p className="noBookmark">Saved location will be displayed here.</p>}
                         {bookmarks.map((bookmark, index) => (
-                            <div className="bookmark"
-                            onClick={() => handleBookmarkClick(bookmark.data.location.name)}    
+                            <div className="bookmark"  
                             key={index}>
                                 <div
                                 className="delete"
                                 onClick={() => handleRemove(bookmark.id)} >
                                     < AiFillCloseCircle className="close"/>
                                 </div>
-                                <div className="Bleft">
+                                <div
+                                onClick={() => handleBookmarkClick(bookmark.data.location.name)}  
+                                className="Bleft">
                                     <p className="Bcity">{bookmark.data.location.name}</p>
                                     <p className="Btemp">{bookmark.data.current.temp_c}°</p>
                                 </div>
-                                <div className="Bright">
+                                <div 
+                                onClick={() => handleBookmarkClick(bookmark.data.location.name)}  
+                                className="Bright">
                                     <p className="Bcondition">{bookmark.data.current.condition.text}</p>
                                     <p className="BHL">H: {Math.floor(bookmark.data.forecast.forecastday[0].day.maxtemp_c)}° | L: {Math.floor(bookmark.data.forecast.forecastday[0].day.mintemp_c)}°</p>
                                 </div>

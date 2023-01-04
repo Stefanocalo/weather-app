@@ -1,0 +1,31 @@
+.skeBookmark {
+    background-color: #aed4ff66;
+    width: 44%;
+    height: 12rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    margin: 1rem;
+    border-radius: 15px;
+}
+
+.bookmarksSkeletonWrapper {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.bookmarksSkeletonContainer {
+    width: 90%;
+    height: 100%;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+

@@ -36,7 +36,7 @@ const initialState = {
         data: []
        }
     ],
-    isLoading: false,
+    isLoading: true,
     error: false,
     showingBookmarks: false
 }

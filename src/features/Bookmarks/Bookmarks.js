@@ -5,14 +5,13 @@ import { fetchBookmarksData, removeBookmark } from "../../store/bookmarksSlice";
 import { fetchForecast } from "../../store/forecastSlice";
 import './Bookmarks.css';
 import {AiFillCloseCircle} from 'react-icons/ai';
-
+import { BookmarkSkeleton } from "./BookmarkSkeleton";
 
 export const Bookmarks = () => {
 
     const bookmarks = useSelector(state => state.bookmarks.bookmarks);
-    const isLoading = useSelector(state => state.bookmarks.isLoading);
+    const isLoading = useSelector(state => state.forecast.isLoading);
     const error = useSelector(state => state.bookmarks.error);
-    const showingBookmarks = useSelector(state => state.bookmarks.showingBookmarks);
     const forecast = useSelector((state) => state.forecast.forecast);
     const dispatch = useDispatch();
 
@@ -37,9 +36,7 @@ export const Bookmarks = () => {
     const renderBookmarks = () => {
         if (isLoading) {
             return(
-                <div>
-                    <p>Loading...</p>
-                </div>
+              <BookmarkSkeleton />
             )
         }
 

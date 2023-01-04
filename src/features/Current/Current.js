@@ -1,28 +1,67 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { CurrentSkeleton } from "./CurrentSkeleton";
-import { addBookmark } from "../../store/bookmarksSlice";
+import { addBookmark, removeBookmark } from "../../store/bookmarksSlice";
 
 import { renderAnim } from "../Hourly/renderAnim";
 import '../Hourly/renderAnim.css';
+import {IoIosAddCircle, IoIosRemoveCircle} from 'react-icons/io';
 
 import './Current.css'
 import uuid from "react-uuid";
 
 export const Current = () => {
 
+
+
     const forecast = useSelector((state) => state.forecast.forecast);
     const isLoading = useSelector((state) => state.forecast.isLoading);
+    const bookmarks = useSelector((state) => state.bookmarks.bookmarks);
     const dispatch = useDispatch();
 
     let today = new Date();
 
-    const handleBookmark = (city, forecast) => {
-        dispatch(addBookmark({
-            name: city,
-            id: uuid(),
-            data: forecast
-        }))
+    const findId = () => {
+        const city = bookmarks.find(element => element.city === forecast.location.name);
+        let id = city.id
+        return id;
+    };
+    
+
+    const handleBookmark = (city) => {
+        let isBookmark;
+        if(bookmarks.some(element => element.city === city)) {
+            isBookmark = true
+        } else {
+            isBookmark = false;
+        }
+        console.log(isBookmark);
+        if(isBookmark) {
+            return(
+                <>
+                <button
+                className="bookmarkD"
+                onClick={() => dispatch(removeBookmark({id: findId()}))}>
+                    < IoIosRemoveCircle className="remove"/>
+                    Remove bookmark
+                </button>
+                </>
+            )
+        } else {
+            return(
+                <>
+                <button
+                className="bookmarkB"
+                onClick={() => dispatch(addBookmark({
+                    city: forecast.location.name,
+                    id: uuid(),
+                    data: forecast}))}>
+                        < IoIosAddCircle className="add"/>
+                        Add bookmark
+                    </button>
+                </>
+            )
+        }
     }
 
 
@@ -47,8 +86,7 @@ export const Current = () => {
                         <div className="condition">
                             {renderAnim(forecast.current.condition.code, now, sunsetHF, dawn)}
                             <h3 className="cond">{forecast.current.condition.text}</h3>
-                            <button className="bookmarkB"
-                            onClick={() => handleBookmark(forecast.location.name, forecast)}>Add to bookmarks</button>
+                            {handleBookmark(forecast.location.name)}
                         </div>
                     </div>
                     <div className="right">

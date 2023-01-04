@@ -26,16 +26,17 @@ input[type=text]:focus{
     padding: 0.6rem 8rem;
 }
 
-input[type=text]:focus + button {
+input[type=text]:focus + .clearB {
     position: static;
     right: 5%;
 }
 
 
-button {
+.clearB {
     padding: 0.6rem 1rem;
     transition: 0.3s;
     border-radius: 15px;
+    cursor: pointer;
     
 }
 
@@ -96,14 +97,14 @@ button {
         padding: 0.7rem 4.3rem;
     }
 
-    input[type=text]:focus + button {
+    input[type=text]:focus + .clearB {
         position: static;
         cursor: pointer;
         right: 0;
     }
     
     
-    button {
+    .clearB {
         padding: 0.6rem 1rem;
         position: fixed;
         cursor: pointer;

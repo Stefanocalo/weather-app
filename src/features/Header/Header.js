@@ -126,6 +126,7 @@ export const Header = () => {
                     onChange={handleInputChange}>
                     </input>
                     <button 
+                    className="clearB"
                     onClick={() => handleClearClick()}
                     >clear</button>
                 </form>

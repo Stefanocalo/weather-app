@@ -26,20 +26,53 @@
 
 .cond {
     font-size: 1.5rem;
-    
 }
 
-.bookmarkB {
+.condition {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bookmarkB,
+.bookmarkD {
+    padding: 0.6rem 1rem;
+    transition: 0.3s;
+    border-radius: 15px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
 }
 
 .bookmarkB:hover {
-    background-color: rgb(184, 210, 220);
+    background-color: rgb(185, 220, 184);
 }
 
-.bookmarkB:active {
+.bookmarkD:hover {
+    background-color: rgb(251, 212, 212);
+}
+
+.bookmarkB:active
+.bookmarkD:active {
     background-color: rgb(121, 142, 150);
 }
+
+.add,
+.remove {
+    font-size: 1.5rem;
+}
+
+.add {
+    color: rgb(119, 161, 118);
+}
+
+.remove {
+    color: rgb(118, 85, 85);
+}
+
+
 
 @media only screen and (max-width: 600px) {
     .CurrentContainer {

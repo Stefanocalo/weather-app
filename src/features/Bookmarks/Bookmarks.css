@@ -20,9 +20,9 @@
 .bookmark {
     background-color: #aed4ff66;
     width: 46%;
-    height: 20%;
+    height: 15rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-direction: column;
     margin: 1rem;
@@ -58,6 +58,7 @@
 .delete {
     display: flex;
     justify-content: flex-end;
+    align-items: flex-end;
     width: 98%;
     margin-top: 0.3rem;
     margin-right: 0.3rem;
@@ -95,7 +96,8 @@
     .bookmark {
         flex-direction: column;
         width: 95%;
-        height: 8rem;
+        height: 10rem;
+        
     }
 
     .bookMainContainer {

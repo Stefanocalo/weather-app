@@ -133,7 +133,6 @@
     align-items: center;
     flex-direction: column;
     width: 4rem;
-    padding-left: 6rem;
 }
 
 
@@ -277,10 +276,5 @@
  
     .patchy {
     padding: 1rem 1rem 1rem 1rem;
-    }
-
-    .fogA {
-        margin-left: 1.8rem;
-        padding-left: 4rem;
     }
  }

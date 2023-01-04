@@ -72,6 +72,12 @@
     color: rgb(118, 85, 85);
 }
 
+#hamburgerMenu {
+    display: none;
+}
+
+
+
 
 
 @media only screen and (max-width: 600px) {
@@ -83,5 +89,35 @@
     .deg {
         margin-top: 1rem;
     } 
+
+    .bar {
+        padding: 0.1rem 1rem;
+        background-color: rgb(240, 240, 240);
+        margin: 0.4rem 0;
+        border-radius: 15px;
+        transition: 0.5s;
+    }
+    
+    #hamburgerMenu {
+        display: block;
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        cursor: pointer;
+        z-index: 100;
+    }
+
+    #hamburgerMenu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    #hamburgerMenu.active .bar:nth-child(1) {
+        transform: translateY(0.6rem) rotate(405deg);
+    }
+
+    #hamburgerMenu.active .bar:nth-child(3) {
+        transform: translateY(-0.6rem) rotate(-405deg) ; 
+    }
+
  }
 

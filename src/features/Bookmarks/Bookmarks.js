@@ -39,6 +39,7 @@ export const Bookmarks = () => {
             return(
                 <div className="bookmarksWrapper">
                     <div className="bookmarksContainer">
+                    {bookmarks.length === 0 && <p className="noBookmark">Saved location will be displayed here.</p>}
                         {bookmarks.map((bookmark, index) => (
                             <div className="bookmark" key={index}>
                                 <div
@@ -62,10 +63,11 @@ export const Bookmarks = () => {
             )
         
         }
+
     };
 
     return(
-        <div className="genralContainer"> 
+        <div className="bookMainContainer"> 
             <p className="sub">Bookmarks</p>
             {renderBookmarks()}
         </div>

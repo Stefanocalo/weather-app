@@ -64,6 +64,11 @@ export const Current = () => {
         }
     }
 
+    const handleHamburger = () => {
+        document.querySelector('#hamburgerMenu').classList.toggle('active');
+        document.querySelector('.bookMainContainer').classList.toggle('active');
+    }
+
 
     const renderCurrent = () => {
 
@@ -81,6 +86,11 @@ export const Current = () => {
 
             return(
                 <div className="CurrentContainer">
+                     <div id="hamburgerMenu" onClick={() => handleHamburger()}>
+                        <div className="bar"></div>
+                        <div className="bar"></div>
+                        <div className="bar"></div>
+                     </div>
                     <div className="left">
                         <h1 className='city'>{forecast.location.name}</h1>
                         <div className="condition">

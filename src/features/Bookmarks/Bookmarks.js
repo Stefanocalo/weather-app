@@ -1,7 +1,8 @@
 import React, {useEffect} from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { addBookmark, fetchBookmarksData, removeBookmark } from "../../store/bookmarksSlice";
+import { fetchBookmarksData, removeBookmark } from "../../store/bookmarksSlice";
+import { fetchForecast } from "../../store/forecastSlice";
 import './Bookmarks.css';
 import {AiFillCloseCircle} from 'react-icons/ai';
 
@@ -22,6 +23,17 @@ export const Bookmarks = () => {
         })
     }, []);
 
+    const handleRemove = (bookmark) => {
+        dispatch(removeBookmark({id: bookmark}));
+    }
+
+    const handleBookmarkClick = (city) => {
+        dispatch(fetchForecast(city));
+        document.querySelector('#hamburgerMenu').classList.remove('active');
+        document.querySelector('.bookMainContainer').classList.remove('active');
+        window.scrollTo({top: 0});
+    }
+
     const renderBookmarks = () => {
         if (isLoading) {
             return(
@@ -31,17 +43,15 @@ export const Bookmarks = () => {
             )
         }
 
-        const handleRemove = (bookmark) => {
-            dispatch(removeBookmark({id: bookmark}));
-        }
-
         if(forecast.location) {
             return(
                 <div className="bookmarksWrapper">
                     <div className="bookmarksContainer">
                     {bookmarks.length === 0 && <p className="noBookmark">Saved location will be displayed here.</p>}
                         {bookmarks.map((bookmark, index) => (
-                            <div className="bookmark" key={index}>
+                            <div className="bookmark"
+                            onClick={() => handleBookmarkClick(bookmark.data.location.name)}    
+                            key={index}>
                                 <div
                                 className="delete"
                                 onClick={() => handleRemove(bookmark.id)} >

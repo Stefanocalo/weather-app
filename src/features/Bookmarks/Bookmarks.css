@@ -19,7 +19,7 @@
 
 .bookmark {
     background-color: #aed4ff66;
-    width: 40%;
+    width: 46%;
     height: 20%;
     display: flex;
     justify-content: center;
@@ -27,6 +27,12 @@
     flex-direction: column;
     margin: 1rem;
     border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.bookmark:hover {
+    background-color: #a2b3c566;
 }
 
 .Bleft,
@@ -84,13 +90,12 @@
 
 
 @media only screen and (max-width: 600px) {
-    .bookmarksContainer{
-        margin-bottom: 6rem;
-    }
+ 
 
     .bookmark {
         flex-direction: column;
-        width: 90%;
+        width: 95%;
+        height: 8rem;
     }
 
     .bookMainContainer {
@@ -101,10 +106,11 @@
         overflow: scroll;
         height: 100vh;
         transition: 0.5s ease-out;
+        z-index: 99;
     }
 
     .bookMainContainer.active {
-        left:0;
+        left: 0;
     }
 
     .bookmarksContainer {

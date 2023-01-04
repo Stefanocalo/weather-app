@@ -35,7 +35,6 @@ export const Current = () => {
         } else {
             isBookmark = false;
         }
-        console.log(isBookmark);
         if(isBookmark) {
             return(
                 <>

@@ -44,6 +44,7 @@
     right: 6.7rem;
     cursor: pointer;
     transition: 0.3s;
+    z-index: 10;
 }
 
 .pill.active {
@@ -53,6 +54,22 @@
 .circle.active {
     right: 5rem;
     background-color: rgb(253, 226, 161);
+}
+
+.pressFeed {
+    width: 2.7rem;
+    height: 2.7rem;
+    background-color:rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    position: fixed;
+    right: 6.1rem;
+    transition: 0.3s;
+    opacity: 0;
+}
+
+.pressFeed.active {
+    right: 4.4rem;
+    animation: pressFeedback 0.3s;
 }
 
 @media only screen and (max-width: 600px) {
@@ -67,5 +84,25 @@
 
     .circle.active {
         right: 3rem;
+    }
+
+    .pressFeed {
+        right: 3.9rem;
+    }
+
+    .pressFeed.active {
+        right: 2.4rem;
+    }
+}
+
+@keyframes pressFeedback {
+    0% {
+        opacity: 0
+    }
+    50%{
+        opacity: 0.5
+    }
+    100%{
+        opacity: 0
     }
 }

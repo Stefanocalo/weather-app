@@ -12,6 +12,7 @@ export const Footer = () => {
         document.querySelector('.pill').classList.toggle('active');
         document.querySelector('.option1').classList.toggle('active');
         document.querySelector('.option2').classList.toggle('active');
+        document.querySelector('.pressFeed').classList.toggle('active');
         dispatch(setUnit());
     }
 
@@ -25,6 +26,7 @@ export const Footer = () => {
                 className="circle"
                 onClick={() => handleClick()}
                 ></div>
+                <div className="pressFeed"></div>
                 <p className="option2">°F</p>
             </div>
         </div>

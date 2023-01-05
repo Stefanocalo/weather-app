@@ -7,8 +7,10 @@ import {MdVisibility} from 'react-icons/md';
 import {FaTemperatureHigh, FaTemperatureLow} from 'react-icons/fa';
 
 export const General = () => {
-    const  forecast = useSelector((state) => state.forecast.forecast);
-    const  isLoading = useSelector((state) => state.forecast.isLoading);
+    const  
+    forecast = useSelector((state) => state.forecast.forecast);
+    const isLoading = useSelector((state) => state.forecast.isLoading);
+    const unit = useSelector(state => state.forecast.isCelsius);
 
     const renderGeneral = () => {
 
@@ -50,7 +52,7 @@ export const General = () => {
                             </div>
                             <div className="rowTitle">
                                 <FaTemperatureLow  className="noShow"/>
-                                <p>{current.feelslike_c}°</p>
+                                <p>{unit ? current.feelslike_c : current.feelslike_f}°</p>
                             </div>
                         </div>
                         <div className="row">

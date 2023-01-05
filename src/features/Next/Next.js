@@ -14,8 +14,9 @@ import { renderStatic } from "../Hourly/renderStatic";
 
 export const Next = () => {
 
-    const  forecast = useSelector((state) => state.forecast.forecast);
-    const  isLoading = useSelector((state) => state.forecast.isLoading);
+    const forecast = useSelector((state) => state.forecast.forecast);
+    const isLoading = useSelector((state) => state.forecast.isLoading);
+    const unit = useSelector(state => state.forecast.isCelsius);
     let today = new Date();
 
 
@@ -53,11 +54,11 @@ export const Next = () => {
                                 <div className="highLowContainer">
                                     <div className='maxMin'>
                                         <p className="highLow">L:</p>
-                                        <p className="temp">{`${Math.floor(forecast.forecast.forecastday[index].day.mintemp_c)}°`}</p>
+                                        <p className="temp">{`${unit ? Math.floor(forecast.forecast.forecastday[index].day.mintemp_c) : Math.floor(forecast.forecast.forecastday[index].day.mintemp_f)}°`}</p>
                                     </div>
                                     <div className='maxMin'>
                                         <p className="highLow">H:</p>
-                                        <p className="temp">{`${Math.floor(forecast.forecast.forecastday[index].day.maxtemp_c)}°`}</p>
+                                        <p className="temp">{`${unit ? Math.floor(forecast.forecast.forecastday[index].day.maxtemp_c) : Math.floor(forecast.forecast.forecastday[index].day.maxtemp_f)}°`}</p>
                                     </div>
                                 </div>
                             </div>
@@ -73,7 +74,7 @@ export const Next = () => {
                                         </div>
                                         <div className="section">
                                             <TbTemperature className="sectionIcon"/>
-                                            <p>{`${day.hour[9].temp_c}°`}</p>
+                                            <p>{`${unit ? day.hour[9].temp_c : day.hour[9].temp_f}°`}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -87,7 +88,7 @@ export const Next = () => {
                                         </div>
                                         <div className="section">
                                             <TbTemperature />
-                                            <p>{`${day.hour[15].temp_c}°`}</p>
+                                            <p>{`${unit ? day.hour[15].temp_c : day.hour[15].temp_f}°`}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -101,7 +102,7 @@ export const Next = () => {
                                         </div>
                                         <div className="section">
                                             <TbTemperature />
-                                            <p>{`${day.hour[21].temp_c}°`}</p>
+                                            <p>{`${unit ? day.hour[21].temp_c : day.hour[21].temp_f}°`}</p>
                                         </div>
                                     </div>
                                 </div> </>}
@@ -129,11 +130,11 @@ export const Next = () => {
                             <div className="row">
                                 <div className="rowTitle">
                                     <FaTemperatureHigh  className="rowIcon"/>
-                                    <p>High: {day.day.maxtemp_c}°</p>
+                                    <p>High: {unit ? day.day.maxtemp_c : day.day.maxtemp_f}°</p>
                                 </div>
                                 <div className="rowTitle">
                                     <FaTemperatureLow  className="rowIcon"/>
-                                    <p>Low: {day.day.mintemp_c}°</p>
+                                    <p>Low: {unit ? day.day.mintemp_c : day.day.mintemp_f}°</p>
                                 </div>
                             </div>
                             <div className="row">

@@ -13,6 +13,7 @@ export const Bookmarks = () => {
     const isLoading = useSelector(state => state.forecast.isLoading);
     const error = useSelector(state => state.bookmarks.error);
     const forecast = useSelector((state) => state.forecast.forecast);
+    const unit = useSelector(state => state.forecast.isCelsius);
     const dispatch = useDispatch();
 
 
@@ -57,13 +58,13 @@ export const Bookmarks = () => {
                                 onClick={() => handleBookmarkClick(bookmark.data.location.name)}  
                                 className="Bleft">
                                     <p className="Bcity">{bookmark.data.location.name}</p>
-                                    <p className="Btemp">{bookmark.data.current.temp_c}°</p>
+                                    <p className="Btemp">{unit ? bookmark.data.current.temp_c : bookmark.data.current.temp_f }°</p>
                                 </div>
                                 <div 
                                 onClick={() => handleBookmarkClick(bookmark.data.location.name)}  
                                 className="Bright">
                                     <p className="Bcondition">{bookmark.data.current.condition.text}</p>
-                                    <p className="BHL">H: {Math.floor(bookmark.data.forecast.forecastday[0].day.maxtemp_c)}° | L: {Math.floor(bookmark.data.forecast.forecastday[0].day.mintemp_c)}°</p>
+                                    <p className="BHL">H: {unit ? Math.floor(bookmark.data.forecast.forecastday[0].day.maxtemp_c) : Math.floor(bookmark.data.forecast.forecastday[0].day.maxtemp_f)}° | L: {unit ? Math.floor(bookmark.data.forecast.forecastday[0].day.mintemp_c) : Math.floor(bookmark.data.forecast.forecastday[0].day.mintemp_f)}°</p>
                                 </div>
                             </div>
                         ))}

@@ -8,6 +8,7 @@ export const Hourly = () => {
 
     const forecast = useSelector((state) => state.forecast.forecast);
     const isLoading = useSelector((state) => state.forecast.isLoading);
+    const unit = useSelector(state => state.forecast.isCelsius);
 
     let today = new Date();
 
@@ -30,7 +31,7 @@ export const Hourly = () => {
                 <div className="hour">
                     <p>now</p>
                     {renderStatic(forecast.current.condition.code, now, sunsetHF, dawn)}
-                    <p>{`${Math.floor(forecast.current.temp_c)}°`}</p>
+                    <p>{`${Math.floor(unit ? forecast.current.temp_c : forecast.current.temp_f)}°`}</p>
                 </div>
                 { Array(23).fill(0).map((n, index) => {
                 if(now + index <= 23) {
@@ -38,7 +39,7 @@ export const Hourly = () => {
                         <div className="hour" key={index}>
                             <p>{`${(now + index)}:00`}</p>
                             {renderStatic(forecast.forecast.forecastday[0].hour[(now + index)].condition.code, (now + index), sunsetHF, dawn)}
-                            <p>{`${Math.floor(forecast.forecast.forecastday[0].hour[(now + index)].temp_c)}°`}</p>
+                            <p>{`${unit ? Math.floor(forecast.forecast.forecastday[0].hour[(now + index)].temp_c) : Math.floor(forecast.forecast.forecastday[0].hour[(now + index)].temp_f)}°`}</p>
                         </div>
                     )
                 } else if(now + index > 23) {
@@ -46,7 +47,7 @@ export const Hourly = () => {
                         <div className="hour" key={index}>
                             <p>{`${(now + index) - 24}:00`}</p>
                             {renderStatic(forecast.forecast.forecastday[1].hour[(now + index) -24].condition.code, ((now + index) -24), sunsetHF, dawn)}
-                            <p>{`${Math.floor(forecast.forecast.forecastday[1].hour[(now + index) - 23].temp_c)}°`}</p>
+                            <p>{`${unit ? Math.floor(forecast.forecast.forecastday[1].hour[(now + index) - 23].temp_c) : Math.floor(forecast.forecast.forecastday[1].hour[(now + index) - 23].temp_f)}°`}</p>
                         </div>
                     )
                 }

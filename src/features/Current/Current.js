@@ -17,6 +17,7 @@ export const Current = () => {
     const forecast = useSelector((state) => state.forecast.forecast);
     const isLoading = useSelector((state) => state.forecast.isLoading);
     const bookmarks = useSelector((state) => state.bookmarks.bookmarks);
+    const unit = useSelector(state => state.forecast.isCelsius);
     const dispatch = useDispatch();
 
     let today = new Date();
@@ -100,8 +101,8 @@ export const Current = () => {
                         </div>
                     </div>
                     <div className="right">
-                        <h1 className="deg">{`${Math.floor(forecast.current.temp_c)}°`}</h1>
-                        <h3 className="cond">H: {`${Math.floor(forecast.forecast.forecastday[0].day.maxtemp_c)}°`} | L: {`${Math.floor(forecast.forecast.forecastday[0].day.mintemp_c)}°`}</h3>
+                        <h1 className="deg">{`${unit ? Math.floor(forecast.current.temp_c) : Math.floor(forecast.current.temp_f)}°`}</h1>
+                        <h3 className="cond">H: {`${unit ? Math.floor(forecast.forecast.forecastday[0].day.maxtemp_c) : Math.floor(forecast.forecast.forecastday[0].day.maxtemp_f)}°`} | L: {`${unit ? Math.floor(forecast.forecast.forecastday[0].day.mintemp_c) : Math.floor(forecast.forecast.forecastday[0].day.mintemp_f)}°`}</h3>
                     </div>
                 </div>
             )

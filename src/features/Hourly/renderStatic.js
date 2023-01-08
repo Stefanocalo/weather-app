@@ -5,13 +5,13 @@ import {ImDroplet} from 'react-icons/im'
 export const renderStatic = (code, actual, sunsetH, dawn) => {
     switch(code) {
         case 1000: 
-            if(actual < sunsetH && actual >= dawn) {
+            if((actual < sunsetH) && (actual >= dawn)) {
                 return(
                     <div className="clear">
                         <BsSunFill className="staticSun"/>
                     </div>
                 )
-            } else if(actual >= sunsetH || actual >= 0 && actual < dawn) {
+            } else if((actual >= sunsetH) || (actual >= 0 && actual < dawn)) {
                 return(
                     <div className="clear">
                         <BsFillMoonStarsFill className="staticMoon" />
@@ -20,14 +20,14 @@ export const renderStatic = (code, actual, sunsetH, dawn) => {
             }
         break;
         case 1003:
-            if(actual < sunsetH && actual >= dawn) {
+            if((actual < sunsetH) && (actual >= dawn)) {
                 return(
                     <div className="cloudy">
                         <BsSunFill className="staticSun1"/>
                         <AiFillCloud className="staticCloud" />
                     </div>
                 )
-            } else if(actual >= sunsetH || actual >= 0 && actual < dawn) {
+            } else if((actual >= sunsetH) || (actual >= 0 && actual < dawn)) {
                 return(
                     <div className="cloudy">
                         <BsFillMoonStarsFill className="staticMoon1" />

@@ -7,13 +7,13 @@ import './renderAnim.css';
 export const renderAnim = (code, actual, sunsetH, dawn) => {
     switch(code) {
         case 1000: 
-            if(actual < sunsetH && actual >= dawn) {
+            if((actual < sunsetH) && (actual >= dawn)) {
                 return(
                     <div className="clear">
                         <BsSunFill className="animSun"/>
                     </div>
                 )
-            } else if(actual >= sunsetH || actual >= 0 && actual < dawn) {
+            } else if((actual >= sunsetH) || (actual >= 0 && actual < dawn)) {
                 return(
                     <div className="clear">
                         <BsFillMoonStarsFill className="animMoon" />
@@ -22,14 +22,14 @@ export const renderAnim = (code, actual, sunsetH, dawn) => {
             }
         break;
         case 1003:
-            if(actual < sunsetH && actual >= dawn) {
+            if((actual < sunsetH) && (actual >= dawn)) {
                 return(
                     <div className="cloudyA">
                         <BsSunFill className="animSun1"/>
                         <AiFillCloud className="animCloud" />
                     </div>
                 )
-            } else if(actual >= sunsetH || actual >= 0 && actual < dawn) {
+            } else if((actual >= sunsetH) || (actual >= 0 && actual < dawn)) {
                 return(
                     <div className="cloudyA">
                         <BsFillMoonStarsFill className="animMoon1" />
@@ -62,7 +62,7 @@ export const renderAnim = (code, actual, sunsetH, dawn) => {
         case 1147:
         case 1072: 
         case 1050:
-            if(actual < sunsetH && actual >= dawn) {
+            if((actual < sunsetH) && (actual >= dawn)) {
                 return(
                     <div className="patchy">
                         <BsSunFill className="animSun1"/>
@@ -70,7 +70,7 @@ export const renderAnim = (code, actual, sunsetH, dawn) => {
                         <ImDroplet className="animDrop" />
                     </div>
                 )
-            } else if(actual >= sunsetH || actual >= 0 && actual < dawn) {
+            } else if((actual >= sunsetH) || (actual >= 0 && actual < dawn)) {
                 return(
                     <div className="patchy">
                         <BsFillMoonStarsFill className="animMoon1" />

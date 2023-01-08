@@ -86,7 +86,7 @@
 }
 
 .rainA {
-    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
 
 .animDrop2 {
@@ -271,7 +271,8 @@
 
 @media only screen and (max-width: 600px) {
     .rainA {
-        padding-left: 1.5rem;
+        padding-left: 0;
+        padding-right: 1.5rem;
     }
  
     .patchy {

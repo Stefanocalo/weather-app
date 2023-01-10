@@ -1,6 +1,8 @@
 import React, {useEffect} from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+import { useSwipeable } from "react-swipeable";
+
 import { fetchBookmarksData, removeBookmark } from "../../store/bookmarksSlice";
 import { fetchForecast } from "../../store/forecastSlice";
 import './Bookmarks.css';
@@ -27,6 +29,14 @@ export const Bookmarks = () => {
         dispatch(removeBookmark({id: bookmark}));
     }
 
+    const handlers = useSwipeable({
+        onSwipedLeft: (eventData) => {
+            document.querySelector('#hamburgerMenu').classList.remove('active');
+            document.querySelector('.bookMainContainer').classList.remove('active');
+            window.scrollTo({top: 0});
+        }
+    })
+
     const handleBookmarkClick = (city) => {
         dispatch(fetchForecast(city));
         document.querySelector('#hamburgerMenu').classList.remove('active');
@@ -43,7 +53,9 @@ export const Bookmarks = () => {
 
         if(forecast.location) {
             return(
-                <div className="bookmarksWrapper">
+                <div
+                {...handlers}
+                className="bookmarksWrapper">
                     <div className="bookmarksContainer">
                     {bookmarks.length === 0 && <p className="noBookmark">Saved location will be displayed here.</p>}
                         {bookmarks.map((bookmark, index) => (

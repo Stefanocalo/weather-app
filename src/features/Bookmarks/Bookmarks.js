@@ -30,10 +30,11 @@ export const Bookmarks = () => {
     }
 
     const handlers = useSwipeable({
-        onSwipedLeft: (eventData) => {
+        onSwipedLeft: () => {
             document.querySelector('#hamburgerMenu').classList.remove('active');
             document.querySelector('.bookMainContainer').classList.remove('active');
             window.scrollTo({top: 0});
+            document.body.style.overflow = 'auto';
         }
     })
 
@@ -42,6 +43,7 @@ export const Bookmarks = () => {
         document.querySelector('#hamburgerMenu').classList.remove('active');
         document.querySelector('.bookMainContainer').classList.remove('active');
         window.scrollTo({top: 0});
+        document.body.style.overflow = 'auto';
     }
 
     const renderBookmarks = () => {

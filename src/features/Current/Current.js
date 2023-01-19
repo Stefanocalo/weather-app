@@ -68,6 +68,7 @@ export const Current = () => {
         document.querySelector('#hamburgerMenu').classList.toggle('active');
         document.querySelector('.bookMainContainer').classList.toggle('active');
         window.scrollTo({top: 0});
+        document.body.style.overflow = 'hidden';
     }
 
 

@@ -3,39 +3,41 @@ import uuid from "react-uuid";
 
 import { getForecast } from "./api";
 
+
+
 const initialState = {
     bookmarks: [
-       {
-        city: 'Milan',
-        id: uuid(),
-        data: []
-       },
-       {
-        city: 'Rome',
-        id: uuid(),
-        data: []
-       },
-       {
-        city: 'Palermo',
-        id: uuid(),
-        data: []
-       },
-       {
-        city: 'Florence',
-        id: uuid(),
-        data: []
-       },
-       {
-        city: 'Naples',
-        id: uuid(),
-        data: []
-       },
-       {
-        city: 'Bologna',
-        id: uuid(),
-        data: []
-       }
-    ],
+        {
+         city: 'Milan',
+         id: uuid(),
+         data: []
+        },
+        {
+         city: 'Rome',
+         id: uuid(),
+         data: []
+        },
+        {
+         city: 'Palermo',
+         id: uuid(),
+         data: []
+        },
+        {
+         city: 'Florence',
+         id: uuid(),
+         data: []
+        },
+        {
+         city: 'Naples',
+         id: uuid(),
+         data: []
+        },
+        {
+         city: 'Bologna',
+         id: uuid(),
+         data: []
+        }
+     ],
     isLoading: true,
     error: false,
     showingBookmarks: false

@@ -20,7 +20,7 @@ export const Bookmarks = () => {
 
 
     useEffect(() => {
-        bookmarks.map((city, index) => {
+        bookmarks?.map((city, index) => {
             dispatch(fetchBookmarksData(city.city, index))
         })
     }, []);

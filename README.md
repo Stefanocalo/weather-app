@@ -56,9 +56,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img src="./media/product.png">
+<img src="./media/example.png">
 
-This is a quick showcase on how to set and use Reddit JSON api. Easy to set up and won't require the user to login to see content.
+A simple but effective weather app using third party api. 
+
+Feel free to change units between Celsius and fahrenheit, add, remove bookmark and check the weather for the upcoming 2 days.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -111,17 +113,29 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Just visit the page and enjoy Reddit content without the worry to log in!
+As soon as the app load you'll be asked if you want to provide your location. Not to worry if you don't feel confortable with it. You can simply search your location and the autocomplete feature will do the rest.
 
-<img align="center" src="./media/example.gif" alt="example" width="400" height="260">
+<img align="center" src="./media/search.gif" alt="example" width="400" height="260">
 
-Feel free to choose between light and dark mode now! You can simply click at the theme icon situated on the right side of the navbar (on both desktop and mobile), and the app will seamlessy switch the theme.
+Chek the next 24 hour forecast hour by hour...
 
-<img align="center" src="media/darkMode.gif" alt="second example" width="400" height="260">
+<img align="center" src="media/24h.gif" alt="second example" width="400" height="260">
 
-Have a look at comments without the worry to be redirected to external links.
+...Or check the details for the next two days!
 
-<img align="center" src="./media/comments.gif" alt="third expample" width="400" height="260">
+<img align="center" src="./media/dayForecast.gif" alt="third expample" width="400" height="260">
+
+Remove or add bookmarks to have them ready the next time you'll need to check weather for a particular locaton.
+
+<img align="center" src="./media/removeAdd.gif" alt="fifth expample" width="260" height="400">
+
+Simply tap on a bookmark to check the weather for the location in a moment!
+
+<img align="center" src="./media/chooseBookmark.gif" alt="sixth expample" width="260" height="400">
+
+By default the app uses Celsius. Not to worry! Simply tap to the unit switch to instantly display the choosen unit without load times!
+
+<img align="center" src="./media/unit.gif" alt="sixth expample" width="400" height="399">
 
 <br>
 

@@ -6,6 +6,6 @@ import bookmarksReducer from './bookmarksSlice'
 export const store = configureStore({
   reducer: {
     forecast: forecastReducer,
-    bookmarks: bookmarksReducer 
+    bookmarks: bookmarksReducer
   },
 });
